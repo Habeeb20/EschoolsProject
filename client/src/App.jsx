@@ -15,6 +15,11 @@ import LocationPage from './component/landingPage/LocationPage'
 import SchoolsHomePage from './pages/SchoolsHompage/SchoolsHomePage'
 import Footer from './component/Footer'
 import SchoolsDetails from './pages/SchoolsHompage/SchoolsDetails'
+import ExamDashboard from './pages/exam/ExamDashboard'
+import ExamLogin from './pages/exam/ExamLogin'
+import ExamRegister from './pages/exam/ExamRegister'
+import ExamDetails from './pages/ExamHomPage/ExamDetails'
+import ExamHomepage from './pages/ExamHomPage/examHomePage'
 function App() {
 
 
@@ -39,6 +44,17 @@ function App() {
 
       <Route path="/schoolshomepage" element={<SchoolsHomePage/>} />
       <Route path="/schools/:id" element={<SchoolsDetails />} />
+
+
+      <Route path="/examdashboard" element={<ExamDashboard />} />
+      
+      <Route path="/examlogin" element={<ExamLogin />} />
+      
+      <Route path="/examregister" element={<ExamRegister />} />
+      
+      <Route path="/exam/:id" element={<ExamDetails />} />
+      
+      <Route path="/examhomepage" element={<ExamHomepage />} />
 
       </Routes>
       <Footer />

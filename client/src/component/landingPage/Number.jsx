@@ -79,14 +79,14 @@ const GridWrapper = styled.div`
 `;
 
 const details = [
-  { id: 1, title: "23441", subTitle: "Jobs", icon: <FaSuitcase />, color: 'FF6B6B' },
-  { id: 2, title: "1220", subTitle: "Schools", icon: <FaBuilding />, color: '4ECDC4' },
-  { id: 3, title: "200", subTitle: "Groups", icon: <FaUsers />, color: '1A535C' },
-  { id: 4, title: "1761", subTitle: "Users", icon: <FaUserPlus />, color: 'FF6B6B' },
-  { id: 5, title: "1500", subTitle: "Students", icon: <FaUsers />, color: 'FF9F1C' },
-  { id: 6, title: "800", subTitle: "Teachers", icon: <FaSuitcase />, color: '4ECDC4' },
-  { id: 7, title: "450", subTitle: "Exams", icon: <FaBuilding />, color: '1A535C' },
-  { id: 8, title: "3000", subTitle: "Training", icon: <FaUserPlus />, color: 'FF9F1C' },
+  { id: 1, title: "23441", subTitle: "Jobs", icon: <FaSuitcase />, color: 'FF6B6B',  link: "/jobs"  },
+  { id: 2, title: "1220", subTitle: "Schools", icon: <FaBuilding />, color: '4ECDC4', link: "/schoolshomepage" },
+  { id: 3, title: "200", subTitle: "Groups", icon: <FaUsers />, color: '1A535C', link: "/jobs" },
+  { id: 4, title: "1761", subTitle: "Users", icon: <FaUserPlus />, color: 'FF6B6B', link: "/jobs" },
+  { id: 5, title: "1500", subTitle: "Students", icon: <FaUsers />, color: 'FF9F1C', link: "/jobs" },
+  { id: 6, title: "800", subTitle: "Teachers", icon: <FaSuitcase />, color: '4ECDC4', link: "/teacherhomepage" },
+  { id: 7, title: "450", subTitle: "Exams", icon: <FaBuilding />, color: '1A535C',link: "/examhomepage" },
+  { id: 8, title: "3000", subTitle: "Training", icon: <FaUserPlus />, color: 'FF9F1C',link: "/jobs" },
 ];
 
 const Number = () => {
@@ -112,6 +112,7 @@ const Number = () => {
             transition={{ duration: 0.5, delay: element.id * 0.1 }}
             onViewportEnter={() => handleReveal(element.id)}
           >
+            <a href={element.link} style={{ textDecoration: "none" }}>
             <Card color={element.color}>
               <IconWrapper color={element.color}>{element.icon}</IconWrapper>
               <ContentWrapper>
@@ -126,6 +127,7 @@ const Number = () => {
                 <p style={{ marginTop: "10px", fontSize: "1rem" }}>{element.subTitle}</p>
               </ContentWrapper>
             </Card>
+            </a>
           </motion.div>
         ))}
       </GridWrapper>

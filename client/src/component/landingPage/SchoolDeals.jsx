@@ -43,7 +43,7 @@ const SchoolDeals = () => {
               />
               <div className="p-4">
               <div class="absolute bg-orange-500 text-white text-sm px-2.5 py-1.5 rounded-md top-2.5 left-2.5">
-  Discount: {school.percent}
+  Discount: {school.percent} for {school.discounttext}
 </div>
                 <h3 className="text-blue-500 text-lg font-semibold mb-2">{school.schoolName}</h3>
                 <p className="text-gray-600 text-sm">Category: {school.category}</p>
