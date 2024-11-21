@@ -8,7 +8,9 @@ import router from "./routes/schoolRoute.js";
 import reportRouter from "./routes/reportRoute.js";
 import requestRouter from "./routes/requestRoute.js";
 import visitorRoute from "./routes/visitorStats.js";
-
+import examRoute from "./routes/examRoute.js"
+import trainingRoute from "./routes/trainingRoute.js"
+import teacherRoute from "./routes/teacherRoute.js"
 dotenv.config();
 
 
@@ -38,6 +40,15 @@ app.use("/request", requestRouter)
 //visitor
 app.use("/visitor", visitorRoute)
 
+//exam 
+app.use("/exam", examRoute)
+
+//training
+app.use("/training", trainingRoute )
+
+
+//teacher
+app.use("/teacher", teacherRoute)
 
  // Start server
  app.listen(PORT, () => {
