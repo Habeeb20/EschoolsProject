@@ -14,6 +14,7 @@ import Landpage5 from '../../component/landingPage/Landpage5'
 import Landpage6 from '../../component/landingPage/Landpage6'
 import Landpage7 from '../../component/landingPage/Landpage7'
 import Landpage8 from '../../component/landingPage/Landpage8'
+import Visitor from '../../component/landingPage/Visitor'
 
 const Home = () => {
   return (
@@ -33,6 +34,7 @@ const Home = () => {
     <Landpage6 />
     <Landpage7 />
     <Landpage8 />
+    <Visitor />
   
       
     </div>

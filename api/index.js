@@ -7,6 +7,7 @@ import bodyParser from "body-parser"
 import router from "./routes/schoolRoute.js";
 import reportRouter from "./routes/reportRoute.js";
 import requestRouter from "./routes/requestRoute.js";
+import visitorRoute from "./routes/visitorStats.js";
 
 dotenv.config();
 
@@ -32,6 +33,10 @@ app.use("/schools", router)
 //request & report
 app.use("/report", reportRouter)
 app.use("/request", requestRouter)
+
+
+//visitor
+app.use("/visitor", visitorRoute)
 
 
  // Start server
