@@ -7,7 +7,7 @@ import Teacher from "../models/teacher.js";
 import asyncHandler from "express-async-handler";
 import pkg from "cloudinary";
 import upload from "../upload.js";
-import { protect } from "../middleware/auth.js";
+import { protect3 } from "../middleware/auth.js";
 import mongoose from "mongoose";
 const { v2: cloudinary } = pkg;
 
@@ -86,7 +86,7 @@ cloudinary.config({
  }))
 
 
- router.get('/dashboard', protect,  asyncHandler(async(req, res) => {
+ router.get('/dashboard', protect3,  asyncHandler(async(req, res) => {
     const userId = req.user.id;
 
     const user = await Teacher.findById(userId);
@@ -102,7 +102,7 @@ cloudinary.config({
 
 
   
-  router.put("/:id", protect, asyncHandler(async(req, res) => {
+  router.put("/:id", protect3, asyncHandler(async(req, res) => {
     const {id} = req.params
 
     const exam = await Teacher.findById(id);
@@ -310,7 +310,7 @@ router.post("/:id/shares", async(req, res) => {
   
       res.status(200).json({
         success: true,
-        school,
+        exam,
       });
     } catch (error) {
       console.error(error);

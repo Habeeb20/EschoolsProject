@@ -38,23 +38,23 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/services" className="text-white hover:text-yellow-400 transition duration-300">
-                Services
+              <Link to="/admission" className="text-white hover:text-yellow-400 transition duration-300">
+                Admission
               </Link>
             </li>
             <li>
-              <Link to="/portfolio" className="text-white hover:text-yellow-400 transition duration-300">
-                Portfolio
+              <Link to="/teacherhomepage" className="text-white hover:text-yellow-400 transition duration-300">
+                Teacher
               </Link>
             </li>
             <li>
-              <Link to="/blog" className="text-white hover:text-yellow-400 transition duration-300">
-                Blog
+              <Link to="/traininghomepage" className="text-white hover:text-yellow-400 transition duration-300">
+                Training
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="text-white hover:text-yellow-400 transition duration-300">
-                Contact
+              <Link to="/tutorialhomepage" className="text-white hover:text-yellow-400 transition duration-300">
+                Tutorial
               </Link>
             </li>
             <li>
@@ -63,8 +63,13 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/faq" className="text-white hover:text-yellow-400 transition duration-300">
-                FAQ
+              <Link to="/storehomepage" className="text-white hover:text-yellow-400 transition duration-300">
+                Store
+              </Link>
+            </li>
+            <li>
+              <Link to="/abroadhomepage" className="text-white hover:text-yellow-400 transition duration-300">
+                Study-abroad
               </Link>
             </li>
           </ul>

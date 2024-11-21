@@ -20,6 +20,11 @@ import ExamLogin from './pages/exam/ExamLogin'
 import ExamRegister from './pages/exam/ExamRegister'
 import ExamDetails from './pages/ExamHomPage/ExamDetails'
 import ExamHomepage from './pages/ExamHomPage/examHomePage'
+import TeacherLogin from './pages/teachers/TeacherLogin'
+import TeacherRegister from './pages/teachers/TeacherRegister'
+import TeacherDashboard from './pages/teachers/TeacherDashboard'
+import TeacherHomepage from './pages/teacherHomePage/TeacherHomepage'
+import TeacherDetails from './pages/teacherHomePage/TeacherDetails'
 function App() {
 
 
@@ -56,6 +61,13 @@ function App() {
       
       <Route path="/examhomepage" element={<ExamHomepage />} />
 
+
+
+      <Route path="/teacherlogin" element={<TeacherLogin />} />
+      <Route path="/teacherregister" element={<TeacherRegister />} />
+      <Route path="/teacherdashboard" element={<TeacherDashboard />} />
+      <Route path="/teacherhomepage" element={<TeacherHomepage />} />
+      <Route path="/teacher/:id" element={<TeacherDetails />} />
       </Routes>
       <Footer />
     
