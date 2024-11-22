@@ -38,6 +38,62 @@ const Dashboard = () => {
         vcpicture:'',
         vcspeech:'',
         AO:'',
+
+        
+  ownership:'',
+
+  schoolfees1:'',
+  class1:'',
+
+  schoolfees2:'',
+  class2:'',
+
+  schoolfees3:'',
+  class3:'',
+
+  schoolfees4:'',
+  class4:'',
+
+  schoolfees5:'',
+  class5:'',
+
+  schoolfees6:'',
+  class6:'',
+
+  schoolfees7:'',
+  class7:'',
+
+
+
+        jobVacancy:'',
+        NumberOfVacancy:'',
+        position1:'',
+        salary1:'',
+        qualification1: '',
+      
+      
+        position2:'',
+        salary2:'',
+        qualification2: '',
+      
+        position3:'',
+        salary3:'',
+        qualification3: '',
+      
+        position4:'',
+        salary4:'',
+        qualification4: '',
+      
+        position5:'',
+        salary5:'',
+        qualification5: '',
+      
+        position6:'',
+        salary6:'',
+        qualification6: '',
+
+     
+      
     })
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
@@ -175,6 +231,127 @@ const Dashboard = () => {
       </p>
       <p className="text-lg text-blue-700 text-center">
         Aims and Objectives: <span className="font-semibold text-black">{user.AO}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        ownership: <span className="font-semibold text-black">{user.ownership}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        school fees 1: <span className="font-semibold text-black">{user.schoolfees1}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        what class for schoolfees 1: <span className="font-semibold text-black">{user.class1}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        school fees 2: <span className="font-semibold text-black">{user.schoolfees2}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        what class for schoolfees 2: <span className="font-semibold text-black">{user.class2}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        school fees 3: <span className="font-semibold text-black">{user.schoolfees3}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        what class for schoolfees 3: <span className="font-semibold text-black">{user.class3}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        school fees 4: <span className="font-semibold text-black">{user.schoolfees4}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        what class for schoolfees 4: <span className="font-semibold text-black">{user.class4}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        school fees 5: <span className="font-semibold text-black">{user.schoolfees5}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        what class for schoolfees 5: <span className="font-semibold text-black">{user.class5}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        school fees 6: <span className="font-semibold text-black">{user.schoolfees6}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        what class for schoolfees 6: <span className="font-semibold text-black">{user.class6}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        school fees 7: <span className="font-semibold text-black">{user.schoolfees7}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        what class for schoolfees 7: <span className="font-semibold text-black">{user.class7}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        jobVacancy: <span className="font-semibold text-black">{user.jobVacancy}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        Number of vacancy position: <span className="font-semibold text-black">{user.NumberOfVacancy}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        position1: <span className="font-semibold text-black">{user.position1}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        salary for position1: <span className="font-semibold text-black">{user.salary1}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        qualification needed for position1: <span className="font-semibold text-black">{user.qualification1}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        position2: <span className="font-semibold text-black">{user.position2}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        salary for position 2: <span className="font-semibold text-black">{user.salary2}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        qualification needed for position2: <span className="font-semibold text-black">{user.qualification2}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        position3: <span className="font-semibold text-black">{user.position3}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        salary for position 3: <span className="font-semibold text-black">{user.salary3}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        qualification needed for position3: <span className="font-semibold text-black">{user.qualification3}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        position4: <span className="font-semibold text-black">{user.position4}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        salary for position 4: <span className="font-semibold text-black">{user.salary4}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        qualification needed for position4: <span className="font-semibold text-black">{user.qualification4}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        position5: <span className="font-semibold text-black">{user.position5}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        salary for position 5: <span className="font-semibold text-black">{user.salary5}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        qualification needed for position5: <span className="font-semibold text-black">{user.qualification5}</span>
+      </p>
+
+      <p className="text-lg text-blue-700 text-center">
+        position6: <span className="font-semibold text-black">{user.position6}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        salary for position 6: <span className="font-semibold text-black">{user.salary6}</span>
+      </p>
+      <p className="text-lg text-blue-700 text-center">
+        qualification needed for position6: <span className="font-semibold text-black">{user.qualification6}</span>
       </p>
 
       {/* Images Section */}
@@ -509,7 +686,7 @@ const Dashboard = () => {
                 </div>
                 <div className="flex flex-col">
                   <label className="block text-sm font-medium text-gray-600 mb-1">
-                    school Bus available?
+                    school Bus available(yes/No)?
                   </label>
                   <input
                     type="text"
@@ -558,6 +735,496 @@ const Dashboard = () => {
                     className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                 </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                   ownership(private, federal or state)
+                  </label>
+                  <input
+                    type="text"
+                    name="ownership"
+                    value={userData.ownership}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees1(for a particular class and fill in the class below) ?
+                  </label>
+                  <input
+                    type="text"
+                    name="schoolfees1"
+                    value={userData.schoolfees1}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees1 for what class ?
+                  </label>
+                  <input
+                    type="text"
+                    name="class1"
+                    value={userData.class1}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees2(for a particular class and fill in the class below) ?
+                  </label>
+                  <input
+                    type="text"
+                    name="schoolfees2"
+                    value={userData.schoolfees2}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees2 for what class ?
+                  </label>
+                  <input
+                    type="text"
+                    name="class2"
+                    value={userData.class2}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees2(for a particular class and fill in the class below) ?
+                  </label>
+                  <input
+                    type="text"
+                    name="schoolfees2"
+                    value={userData.schoolfees2}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees2 for what class ?
+                  </label>
+                  <input
+                    type="text"
+                    name="class2"
+                    value={userData.class2}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees3(for a particular class and fill in the class below) ?
+                  </label>
+                  <input
+                    type="text"
+                    name="schoolfees3"
+                    value={userData.schoolfees3}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees3 for what class ?
+                  </label>
+                  <input
+                    type="text"
+                    name="class3"
+                    value={userData.class3}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees4(for a particular class and fill in the class below) ?
+                  </label>
+                  <input
+                    type="text"
+                    name="schoolfees4"
+                    value={userData.schoolfees4}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees4 for what class ?
+                  </label>
+                  <input
+                    type="text"
+                    name="class4"
+                    value={userData.class4}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees5(for a particular class and fill in the class below) ?
+                  </label>
+                  <input
+                    type="text"
+                    name="schoolfees5"
+                    value={userData.schoolfees5}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees5 for what class ?
+                  </label>
+                  <input
+                    type="text"
+                    name="class5"
+                    value={userData.class5}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees6(for a particular class and fill in the class below) ?
+                  </label>
+                  <input
+                    type="text"
+                    name="schoolfees6"
+                    value={userData.schoolfees6}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees6 for what class ?
+                  </label>
+                  <input
+                    type="text"
+                    name="class6"
+                    value={userData.class6}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees7(for a particular class and fill in the class below) ?
+                  </label>
+                  <input
+                    type="text"
+                    name="schoolfees7"
+                    value={userData.schoolfees7}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    school fees7 for what class ?
+                  </label>
+                  <input
+                    type="text"
+                    name="class7"
+                    value={userData.class7}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    any job vacancy in your school(yes/No)
+                  </label>
+                  <input
+                    type="text"
+                    name="jobVacancy"
+                    value={userData.jobVacancy}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    how many positions are vacant if there is any
+                  </label>
+                  <input
+                    type="number"
+                    name="NumberOfVacancy"
+                    value={userData.NumberOfVacancy}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    vacant position 1?
+                  </label>
+                  <input
+                    type="text"
+                    name="position1"
+                    value={userData.position1}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    whats the salary for position 1?
+                  </label>
+                  <input
+                    type="text"
+                    name="salary1"
+                    value={userData.salary1}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                  what qualification are you searching for to fit in position 1?
+                  </label>
+                  <input
+                    type="text"
+                    name="qualification1"
+                    value={userData.qualification1}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+
+
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    vacant position 2?
+                  </label>
+                  <input
+                    type="text"
+                    name="position2"
+                    value={userData.position2}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    whats the salary for position 2?
+                  </label>
+                  <input
+                    type="text"
+                    name="salary2"
+                    value={userData.salary2}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                  what qualification are you searching for to fit in position 2?
+                  </label>
+                  <input
+                    type="text"
+                    name="qualification2"
+                    value={userData.qualification2}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    vacant position 3?
+                  </label>
+                  <input
+                    type="text"
+                    name="position3"
+                    value={userData.position3}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    whats the salary for position 3?
+                  </label>
+                  <input
+                    type="text"
+                    name="salary3"
+                    value={userData.salary3}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                  what qualification are you searching for to fit in position 3?
+                  </label>
+                  <input
+                    type="text"
+                    name="qualification3"
+                    value={userData.qualification3}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    vacant position 4?
+                  </label>
+                  <input
+                    type="text"
+                    name="position4"
+                    value={userData.position4}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    whats the salary for position 4?
+                  </label>
+                  <input
+                    type="text"
+                    name="salary4"
+                    value={userData.salary4}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                  what qualification are you searching for to fit in position 4?
+                  </label>
+                  <input
+                    type="text"
+                    name="qualification4"
+                    value={userData.qualification4}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    vacant position 5?
+                  </label>
+                  <input
+                    type="text"
+                    name="position5"
+                    value={userData.position5}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    whats the salary for position 5?
+                  </label>
+                  <input
+                    type="text"
+                    name="salary5"
+                    value={userData.salary5}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                  what qualification are you searching for to fit in position 5?
+                  </label>
+                  <input
+                    type="text"
+                    name="qualification5"
+                    value={userData.qualification5}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+
+                
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    vacant position 6?
+                  </label>
+                  <input
+                    type="text"
+                    name="position6"
+                    value={userData.position6}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                    whats the salary for position 6?
+                  </label>
+                  <input
+                    type="text"
+                    name="salary6"
+                    value={userData.salary6}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-600 mb-1">
+                  what qualification are you searching for to fit in position 6?
+                  </label>
+                  <input
+                    type="text"
+                    name="qualification6"
+                    value={userData.qualification6}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <div className="flex flex-col">
                   <label className="block text-sm font-medium text-gray-600 mb-1">

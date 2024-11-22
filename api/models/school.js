@@ -37,6 +37,57 @@ const schoolSchema = new mongoose.Schema({
   vcspeech:String,
   AO:String,
 
+  ownership:String,
+
+  schoolfees1:String,
+  class1:String,
+
+  schoolfees2:String,
+  class2:String,
+
+  schoolfees3:String,
+  class3:String,
+
+  schoolfees4:String,
+  class4:String,
+
+  schoolfees5:String,
+  class5:String,
+
+  schoolfees6:String,
+  class6:String,
+
+  schoolfees7:String,
+  class7:String,
+
+  jobVacancy:String,
+  NumberOfVacancy:Number,
+
+  position1:String,
+  salary1:String,
+  qualification1:String,
+
+
+  position2:String,
+  salary2:String,
+  qualification2:String,
+
+  position3:String,
+  salary3:String,
+  qualification3:String,
+
+  position4:String,
+  salary4:String,
+  qualification4:String,
+
+  position5:String,
+  salary5:String,
+  qualification5:String,
+
+  position6:String,
+  salary6:String,
+  qualification6:String,
+
   comments: [
     {
       name: String,

@@ -105,9 +105,13 @@ export default function SchoolsHomePage() {
               className="w-full h-48 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-2">{card.schoolName}</h3>
-              <p className="text-gray-600 mb-4">{card.email}</p>
-              <p className="text-gray-600 mb-4">{card.location}</p>
+              <h3 className="text-lg font-semibold mb-2">School Name: {card.schoolName}</h3>
+              <p className="text-gray-600 mb-4">School email: {card.email}</p>
+              <p className="text-gray-600 mb-4">Ownership: {card.ownership}</p>
+              <p className="text-gray-600 mb-4">minimum school fees: {card.schoolFees}</p>
+              <p className="text-gray-600 mb-4">Category: {card.category}</p>
+              <p className="text-gray-600 mb-4">Review: {card.comments.length}</p>
+              <p className="text-gray-600 mb-4">location: {card.location}</p>
               <Link to={`/schools/${card._id}`}>
                 <button
                   className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"

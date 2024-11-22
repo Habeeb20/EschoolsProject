@@ -178,7 +178,41 @@ const SchoolsDetails = () => {
                 <span className="font-bold">Address:</span> {school.location}
               </p>
               <p className="text-gray-700">
-                <span className="font-bold">school fees:</span> {school.schoolFees}
+                <span className="font-bold">minimum school fees:</span> {school.schoolFees}
+              </p>
+
+              <p className="text-gray-700">
+                <span className="font-bold">school fees :</span> {school.schoolfees1} for {school.class1}
+              </p>
+
+              
+              <p className="text-gray-700">
+                <span className="font-bold">school fees :</span> {school.schoolfees2} for {school.class2}
+              </p>
+
+              
+              <p className="text-gray-700">
+                <span className="font-bold">school fees :</span> {school.schoolfees3} for {school.class3}
+              </p>
+
+              
+              <p className="text-gray-700">
+                <span className="font-bold">school fees :</span> {school.schoolfees4} for {school.class4}
+              </p>
+
+              
+              <p className="text-gray-700">
+                <span className="font-bold">school fees :</span> {school.schoolfees5} for {school.class5}
+              </p>
+
+              
+              <p className="text-gray-700">
+                <span className="font-bold">school fees :</span> {school.schoolfees6} for {school.class6}
+              </p>
+
+              
+              <p className="text-gray-700">
+                <span className="font-bold">school fees :</span> {school.schoolfees7} for {school.class7}
               </p>
             </div>
           </div>
@@ -201,6 +235,33 @@ const SchoolsDetails = () => {
               <span className="font-bold">History:</span> {school.history}
             </p>
           </div>
+
+          {school.jobVacancy === "yes" || school.jobVacancy === "yeah" ? (
+  <>
+    <h3 className="text-black">Vacancies:</h3>
+    <div className="space-y-2">
+      <p className="text-gray-700">
+        <span className="font-bold">Position 1:</span> {school.position1}     <span className="font-bold text-black">     salary:</span> {school.salary1} <span className="font-bold text-black">qualification:</span> {school.qualification1}
+      </p>
+      <p className="text-gray-700">
+        <span className="font-bold">Position 2:</span> {school.position2}     <span className="font-bold text-black">     salary:</span>{school.salary2}  <span className="font-bold text-black">qualification:</span> {school.qualification2}
+      </p>
+      <p className="text-gray-700">
+        <span className="font-bold">Position 3:</span> {school.position3}    <span className="font-bold text-black">     salary: </span>{school.salary3}  <span className="font-bold text-black">qualification:</span>{school.qualification3}
+      </p>
+      <p className="text-gray-700">
+        <span className="font-bold">Position 4:</span> {school.position4}    <span className="font-bold text-black">     salary:</span>{school.salary4}  <span className="font-bold text-black">qualification:</span>{school.qualification4}
+      </p>
+      <p className="text-gray-700">
+        <span className="font-bold">Position 5:</span> {school.position5}    <span className="font-bold text-black">     salary:</span>{school.salary5}  <span className="font-bold text-black">qualification: </span>{school.qualification5}
+      </p>
+    </div>
+  </>
+) : (
+  <p>No vacancy in the school</p>
+)}
+
+     
 
           {/* Grid Picture */}
           <div className="p-2 min-h-screen mb-negative">
