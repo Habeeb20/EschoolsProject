@@ -11,6 +11,7 @@ import visitorRoute from "./routes/visitorStats.js";
 import examRoute from "./routes/examRoute.js"
 import trainingRoute from "./routes/trainingRoute.js"
 import teacherRoute from "./routes/teacherRoute.js"
+import All from "./routes/allRoute.js"
 dotenv.config();
 
 
@@ -49,6 +50,10 @@ app.use("/training", trainingRoute )
 
 //teacher
 app.use("/teacher", teacherRoute)
+
+
+//all
+app.use("/all", All)
 
  // Start server
  app.listen(PORT, () => {
