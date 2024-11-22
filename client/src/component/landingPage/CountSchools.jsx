@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import CountUp from "react-countup";
+import { Link } from "react-router-dom";
 
 const CountSchools = () => {
   const [counts, setCounts] = useState([]);
@@ -32,7 +33,7 @@ const CountSchools = () => {
           .map((location) => `locations[]=${encodeURIComponent(location)}`)
           .join("&");
         const response = await axios.get(
-          `http://localhost:9000/schools/countSchools?${queryString}`
+          `${import.meta.env.VITE_API}/schools/countSchools?${queryString}`
         );
         console.log(response);
         setCounts(response.data);
@@ -62,12 +63,13 @@ const CountSchools = () => {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:grid-cols-4">
           {counts.length > 0 ? (
             counts.slice(0, visibleCount).map(({ location, count }) => (
-              <div
+              <Link
                 key={location}
+                to={`/data/${location}`}
                 className="bg-white text-black p-5 rounded-lg shadow-lg flex flex-col items-center border-t-4 border-green-600 w-full"
               >
                 <div className="text-green-600 text-3xl mb-2">
-                  <i className="fas fa-school"></i> {/* Example Icon */}
+                  <i className="fas fa-school"></i> 
                 </div>
                 <h3 className="text-lg font-semibold">{`Schools in ${location}`}</h3>
                 <CountUp
@@ -78,7 +80,7 @@ const CountSchools = () => {
                   className="text-2xl font-bold"
                 />
                 <p className="text-gray-600">{`Number of schools: ${count}`}</p>
-              </div>
+              </Link>
             ))
           ) : (
             <p className="text-center">No data available</p>

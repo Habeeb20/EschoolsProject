@@ -30,6 +30,7 @@ import TrainingRegister from './pages/training/TrainingRegister'
 import TrainingDashboard from './pages/training/TrainingDashboard'
 import TrainingHomePage from './pages/trainingHomepage/TrainingHomePage'
 import TrainingDetails from './pages/trainingHomepage/TrainingDetails'
+import DataInState from './component/landingPage/DataInState'
 function App() {
 
 
@@ -45,6 +46,7 @@ function App() {
       <Route path="/schooldetail/:id" element={<AschoolDetails />} />
       <Route path="/category/:category" element={<CategoryPage />} />
       <Route path="/state/:state" element={<LocationPage />} />
+      <Route path="/data/:location" element={<DataInState />} />
    
 
       <Route path="/request" element={<Request />} />
