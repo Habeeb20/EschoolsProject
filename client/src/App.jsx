@@ -25,6 +25,11 @@ import TeacherRegister from './pages/teachers/TeacherRegister'
 import TeacherDashboard from './pages/teachers/TeacherDashboard'
 import TeacherHomepage from './pages/teacherHomePage/TeacherHomepage'
 import TeacherDetails from './pages/teacherHomePage/TeacherDetails'
+import TrainingLogin from './pages/training/TrainingLogin'
+import TrainingRegister from './pages/training/TrainingRegister'
+import TrainingDashboard from './pages/training/TrainingDashboard'
+import TrainingHomePage from './pages/trainingHomepage/TrainingHomePage'
+import TrainingDetails from './pages/trainingHomepage/TrainingDetails'
 function App() {
 
 
@@ -68,6 +73,12 @@ function App() {
       <Route path="/teacherdashboard" element={<TeacherDashboard />} />
       <Route path="/teacherhomepage" element={<TeacherHomepage />} />
       <Route path="/teacher/:id" element={<TeacherDetails />} />
+
+       <Route path="/traininglogin" element={<TrainingLogin />} />
+       <Route path="/trainingregister" element={<TrainingRegister />} />
+       <Route path="/trainingdashboard" element={<TrainingDashboard />} />
+       <Route path="/traininghomepage" element={<TrainingHomePage />} />
+       <Route path="/training/:id" element={<TrainingDetails />} />
       </Routes>
       <Footer />
     

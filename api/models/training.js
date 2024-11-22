@@ -5,6 +5,7 @@ const trainingSchema = new mongoose.Schema({
     username:{type:String, required:true},
     password:{type:String, required:true},
     trainingName:String,
+    category:String,
     features:String,
     motto:String,
     email:String,

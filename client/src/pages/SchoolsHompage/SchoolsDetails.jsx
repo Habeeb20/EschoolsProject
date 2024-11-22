@@ -177,6 +177,9 @@ const SchoolsDetails = () => {
               <p className="text-gray-700">
                 <span className="font-bold">Address:</span> {school.location}
               </p>
+              <p className="text-gray-700">
+                <span className="font-bold">school fees:</span> {school.schoolFees}
+              </p>
             </div>
           </div>
 
