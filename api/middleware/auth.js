@@ -4,6 +4,9 @@ import School from "../models/school.js";
 import Exam from "../models/exam.js";
 import Training from "../models/training.js";
 import Teacher from "../models/teacher.js";
+import Bookshop from "../models/bookshop.js"
+import Tutorial from "../models/tutorial.js";
+import Store from "../models/store.js";
 
 
 export const protect = asyncHandler(async (req, res, next) => {
@@ -144,3 +147,109 @@ export const protect4 = asyncHandler(async (req, res, next) => {
     throw new Error("Not authorized, no token provided.");
   }
 });
+
+
+
+export const protect5 = asyncHandler(async (req, res, next) => {
+  let token;
+
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    try {
+      token = req.headers.authorization.split(" ")[1]; // Extract token from header
+
+      // Verify token
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+      // Attach user info to request
+      req.user = await Bookshop.findById(decoded.id).select("-password");
+      if (!req.user) {
+        res.status(401);
+        throw new Error("User not found.");
+      }
+
+      next(); // Proceed to the next middleware/controller
+    } catch (error) {
+      console.error(error);
+      res.status(401);
+      throw new Error("Not authorized, token failed.");
+    }
+  }
+
+  if (!token) {
+    res.status(401);
+    throw new Error("Not authorized, no token provided.");
+  }
+});
+
+
+export const protect6 = asyncHandler(async (req, res, next) => {
+  let token;
+
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    try {
+      token = req.headers.authorization.split(" ")[1]; // Extract token from header
+
+      // Verify token
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+      // Attach user info to request
+      req.user = await Tutorial.findById(decoded.id).select("-password");
+      if (!req.user) {
+        res.status(401);
+        throw new Error("User not found.");
+      }
+
+      next(); // Proceed to the next middleware/controller
+    } catch (error) {
+      console.error(error);
+      res.status(401);
+      throw new Error("Not authorized, token failed.");
+    }
+  }
+
+  if (!token) {
+    res.status(401);
+    throw new Error("Not authorized, no token provided.");
+  }
+});
+
+export const protect7 = asyncHandler(async (req, res, next) => {
+  let token;
+
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    try {
+      token = req.headers.authorization.split(" ")[1]; // Extract token from header
+
+      // Verify token
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+      // Attach user info to request
+      req.user = await Store.findById(decoded.id).select("-password");
+      if (!req.user) {
+        res.status(401);
+        throw new Error("User not found.");
+      }
+
+      next(); // Proceed to the next middleware/controller
+    } catch (error) {
+      console.error(error);
+      res.status(401);
+      throw new Error("Not authorized, token failed.");
+    }
+  }
+
+  if (!token) {
+    res.status(401);
+    throw new Error("Not authorized, no token provided.");
+  }
+});
+

@@ -453,4 +453,72 @@ router.get("/schoolcompare", async (req, res) => {
   }
 });
 
+
+
+
+
+//category count
+
+router.get('/category/counts', async(req, res) => {
+  try {
+    const categoryCounts = {
+      primary: await School.countDocuments({ category: 'primary' }),
+      secondary: await School.countDocuments({ category: 'secondary' }),
+      college: await School.countDocuments({ category: 'college' }),
+      polytechnic: await School.countDocuments({ category: 'polytechnic' }),
+      university: await School.countDocuments({ category: 'university' })
+    };
+
+    res.json(categoryCounts);
+  } catch (error) {
+    console.error('Error fetching category counts:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+})
+
+router.get('/location/counts', async(req, res) => {
+  try {
+    const categoryCounts = {
+      primary: await School.countDocuments({ category: 'primary' }),
+      secondary: await School.countDocuments({ category: 'secondary' }),
+      college: await School.countDocuments({ category: 'college' }),
+      polytechnic: await School.countDocuments({ category: 'polytechnic' }),
+      university: await School.countDocuments({ category: 'university' })
+    };
+
+    res.json(categoryCounts);
+  } catch (error) {
+    console.error('Error fetching category counts:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+})
+
+
+router.get('/location/counts', async (req, res) => {
+  try {
+
+    const states = [
+      'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa', 'Benue', 'Borno',
+      'Cross River', 'Delta', 'Ebonyi', 'Edo', 'Ekiti', 'Enugu', 'Gombe', 'Imo', 'Jigawa',
+      'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara', 'Lagos', 'Nasarawa', 'Niger',
+      'Ogun', 'Ondo', 'Osun', 'Oyo', 'Plateau', 'Rivers', 'Sokoto', 'Taraba', 'Yobe', 'Zamfara'
+    ];
+
+
+    const stateCounts = {};
+
+    for (const state of states) {
+      const count = await School.countDocuments({ state: state });
+      stateCounts[state] = count;
+    }
+
+
+    res.json(stateCounts);
+
+  } catch (error) {
+    console.error('Error fetching state counts:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 export default router;

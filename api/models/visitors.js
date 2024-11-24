@@ -1,14 +1,10 @@
-
-
 import mongoose from "mongoose";
-
-const visitorStatsSchema = new mongoose.Schema({
-  totalVisits: { type: Number, default: 0 },
-  activeUsers: { type: Number, default: 0 },
-  returningUsers: { type: Number, default: 0 },
-  userHistory: { type: [String], default: [] },  
-  activeSessions: { type: [String], default: [] } 
+const visitorSchema = new mongoose.Schema({
+  visitorId: { type: String, unique: true },
+  visitTime: { type: Date, default: Date.now },
+  lastVisit: Date,
+  isReturning: { type: Boolean, default: false },
 });
 
-export default mongoose.model("VisitorStats", visitorStatsSchema);
 
+export default mongoose.model("Visitor", visitorSchema)
