@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 
 const CountSchools = () => {
   const [counts, setCounts] = useState([]);
-  const [visibleCount, setVisibleCount] = useState(4); // 4 grid boxes at a time
+  const [visibleCount, setVisibleCount] = useState(4); 
 
   useEffect(() => {
     const fetchCounts = async () => {
       try {
         const locations = [
-          "Ibadan",
+          "Oyo",
           "Lagos",
           "Abuja",
           "Delta",
@@ -47,11 +47,11 @@ const CountSchools = () => {
   }, []);
 
   const handleSeeMore = () => {
-    setVisibleCount((prevCount) => prevCount + 4); // Show 4 more
+    setVisibleCount((prevCount) => prevCount + 4); 
   };
 
   const handleShowLess = () => {
-    setVisibleCount(4); // Reset to 4
+    setVisibleCount(4);
   };
 
   return (

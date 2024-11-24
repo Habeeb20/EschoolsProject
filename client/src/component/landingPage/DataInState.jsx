@@ -65,6 +65,12 @@ const DataInState = () => {
     }
   };
 
+  const getCount = (category) => {
+    return category === "all"
+      ? Object.values(data).flat().length
+      : data[category]?.length || 0;
+  };
+
   return (
     <div className="p-5">
       <h2 className="text-center text-2xl font-bold mb-5 mt-4">
@@ -94,6 +100,7 @@ const DataInState = () => {
               onClick={() => handleCategory(category)}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
+              {getCount(category)})
             </button>
           ))}
         </div>
@@ -121,6 +128,7 @@ const DataInState = () => {
                     item.picture2 ||
                     item.picture3 ||
                     item.picture4 ||
+                    item.picture5 ||
                     "https://via.placeholder.com/150"
                   }
                   alt={item.name || "Placeholder"}
@@ -133,6 +141,7 @@ const DataInState = () => {
                     item.schoolName ||
                     item.fname ||
                     item.examBody ||
+                    item.bookshopName ||
                     "N/A"}
                 </h3>
                 <p className="text-sm">

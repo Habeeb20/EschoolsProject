@@ -31,6 +31,12 @@ import TrainingDashboard from './pages/training/TrainingDashboard'
 import TrainingHomePage from './pages/trainingHomepage/TrainingHomePage'
 import TrainingDetails from './pages/trainingHomepage/TrainingDetails'
 import DataInState from './component/landingPage/DataInState'
+import BookLogin from './pages/Book/BookLogin'
+import BookRegister from './pages/Book/BookRegister'
+import BookDashboard from './pages/Book/BookDashboard'
+import StoreDashboard from './pages/store/StoreDashboard'
+import StoreLogin from './pages/store/StoreLogin'
+import StoreRegister from './pages/store/StoreRegister'
 function App() {
 
 
@@ -81,6 +87,16 @@ function App() {
        <Route path="/trainingdashboard" element={<TrainingDashboard />} />
        <Route path="/traininghomepage" element={<TrainingHomePage />} />
        <Route path="/training/:id" element={<TrainingDetails />} />
+
+
+       <Route path="/bookshoplogin" element={<BookLogin />} />
+       <Route path="/bookshopregister" element={<BookRegister />} />
+       <Route path="/bookshopdashboard" element={<BookDashboard />} />
+
+       <Route path="/storedashboard" element={<StoreDashboard />} />
+       <Route path="/storelogin" element={<StoreLogin />} />
+       <Route path="/storeregister" element={<StoreRegister />} />
+
       </Routes>
       <Footer />
     

@@ -79,14 +79,14 @@ const GridWrapper = styled.div`
 `;
 
 const details = [
-  { id: 1, title: "23441", subTitle: "Jobs", icon: <FaSuitcase />, color: 'FF6B6B',  link: "/jobs"  },
-  { id: 2, title: "1220", subTitle: "Schools", icon: <FaBuilding />, color: '4ECDC4', link: "/schoolshomepage" },
-  { id: 3, title: "200", subTitle: "Groups", icon: <FaUsers />, color: '1A535C', link: "/jobs" },
-  { id: 4, title: "1761", subTitle: "Users", icon: <FaUserPlus />, color: 'FF6B6B', link: "/jobs" },
-  { id: 5, title: "1500", subTitle: "Students", icon: <FaUsers />, color: 'FF9F1C', link: "/jobs" },
-  { id: 6, title: "800", subTitle: "Teachers", icon: <FaSuitcase />, color: '4ECDC4', link: "/teacherhomepage" },
-  { id: 7, title: "450", subTitle: "Exams", icon: <FaBuilding />, color: '1A535C',link: "/examhomepage" },
-  { id: 8, title: "3000", subTitle: "Training", icon: <FaUserPlus />, color: 'FF9F1C',link: "/jobs" },
+  { id: 1, title: "201", subTitle: "Jobs", icon: <FaSuitcase />, color: 'FF6B6B',  link: "/jobs"  },
+  { id: 2, title: "102", subTitle: "Schools", icon: <FaBuilding />, color: '4ECDC4', link: "/schoolshomepage" },
+  { id: 3, title: "50", subTitle: "Groups", icon: <FaUsers />, color: '1A535C', link: "/jobs" },
+  { id: 4, title: "101", subTitle: "Users", icon: <FaUserPlus />, color: 'FF6B6B', link: "/jobs" },
+  { id: 5, title: "150", subTitle: "Students", icon: <FaUsers />, color: 'FF9F1C', link: "/jobs" },
+  { id: 6, title: "200", subTitle: "Teachers", icon: <FaSuitcase />, color: '4ECDC4', link: "/teacherhomepage" },
+  { id: 7, title: "150", subTitle: "Exams", icon: <FaBuilding />, color: '1A535C',link: "/examhomepage" },
+  { id: 8, title: "30", subTitle: "Training", icon: <FaUserPlus />, color: 'FF9F1C',link: "/jobs" },
 ];
 
 const Number = () => {

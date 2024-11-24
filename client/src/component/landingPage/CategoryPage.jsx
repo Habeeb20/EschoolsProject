@@ -100,7 +100,7 @@ const CategoryPage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:9000/schools')
+      .get(`${import.meta.env.VITE_API}/schools`)
       .then((response) => {
         if (response.data && Array.isArray(response.data)) {
           const filteredSchools = response.data.filter((school) => school.category === category);
