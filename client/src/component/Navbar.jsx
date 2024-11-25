@@ -63,6 +63,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link to="/comparison" className="text-white hover:text-yellow-400 transition duration-300">
+                comparison
+              </Link>
+            </li>
+            <li>
               <Link to="/storehomepage" className="text-white hover:text-yellow-400 transition duration-300">
                 Store
               </Link>

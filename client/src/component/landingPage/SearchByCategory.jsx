@@ -1,37 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaSchool, FaUniversity, FaGraduationCap, FaBuilding, FaChalkboardTeacher } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import SearchByLocation from "./SeachByLocation";
-import { useState, useEffect } from "react";
 import axios from "axios";
+
 const SearchByCategory = () => {
   const navigate = useNavigate();
+
   const [categoryCounts, setCategoryCounts] = useState({
     primary: 0,
     secondary: 0,
     college: 0,
     polytechnic: 0,
     university: 0,
+    teachers: 0, // Initialize teachers count
   });
+
   const categories = [
-    { name: "Nur&Pri school", icon: <FaSchool />, category: "primary" },
+    { name: "Nur & Pri School", icon: <FaSchool />, category: "primary" },
     { name: "Secondary School", icon: <FaChalkboardTeacher />, category: "secondary" },
     { name: "College", icon: <FaGraduationCap />, category: "college" },
     { name: "Polytechnic", icon: <FaBuilding />, category: "polytechnic" },
     { name: "University", icon: <FaUniversity />, category: "university" },
+    { name: "Teachers", icon: <FaUniversity />, category: "teachers" },
   ];
 
   const handleCategoryClick = (category) => {
-    console.log(`Navigating to category: ${category}`); 
+    console.log(`Navigating to category: ${category}`);
     navigate(`/category/${category}`);
   };
 
   useEffect(() => {
     const fetchCategoryCounts = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API}/schools/category/counts`);
-        setCategoryCounts(response.data);
-        console.log(response.data)
+        // Fetch school category counts
+        const schoolResponse = await axios.get(`${import.meta.env.VITE_API}/schools/category/counts`);
+        // Fetch teacher count
+        const teacherResponse = await axios.get(`${import.meta.env.VITE_API}/teacher/count`);
+
+        setCategoryCounts({
+          ...schoolResponse.data,
+          teachers: teacherResponse.data.count, // Assume the backend returns `{ count: <number> }`
+        });
+
+        console.log({ ...schoolResponse.data, teachers: teacherResponse.data.count });
       } catch (error) {
         console.error("Error fetching category counts:", error);
       }
@@ -52,7 +64,7 @@ const SearchByCategory = () => {
           >
             <div className="text-4xl text-gray-700 mb-2">{category.icon}</div>
             <p className="text-center text-gray-800 font-semibold">{category.name}</p>
-            <p className="text-center text-gray-500">{categoryCounts[category.category]}</p>
+            <p className="text-center text-gray-500">{categoryCounts[category.category] || 0}</p>
           </div>
         ))}
       </div>

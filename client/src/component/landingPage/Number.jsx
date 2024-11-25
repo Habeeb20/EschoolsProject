@@ -53,15 +53,15 @@ const IconWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   color: #555;
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -124,7 +124,7 @@ const Number = () => {
                     separator=","
                   />
                 )}
-                <p style={{ marginTop: "10px", fontSize: "1rem" }}>{element.subTitle}</p>
+                <p style={{ marginTop: "6px", fontSize: "1.2rem", marginBottom:"6px" }}>{element.subTitle}</p>
               </ContentWrapper>
             </Card>
             </a>

@@ -425,7 +425,7 @@ router.get("/countSchools", async (req, res) => {
   }
 });
 
-router.get("/schoolcompare", async (req, res) => {
+router.get("/schoolscompare", async (req, res) => {
   try {
     const { location, schoolFees, onBoarding, schoolName } = req.query;
 
@@ -450,6 +450,23 @@ router.get("/schoolcompare", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: error.message });
+  }
+});
+
+
+router.get("/comparison", async (req, res) => {
+  const { school } = req.query;
+  try {
+    const school1 = await School.findOne({
+      school: new RegExp(`^${school}$`, "i"),
+    }); 
+    if (school1) {
+      res.json(school1);
+    } else {
+      res.status(404).json({ message: "School not found" });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 });
 

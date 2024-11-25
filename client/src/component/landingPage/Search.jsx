@@ -158,7 +158,7 @@ const Search = () => {
   useEffect(() => {
     const fetchSchools = async () => {
       try {
-        const response = await axios.get('http://localhost:9000/schools');
+        const response = await axios.get(`${import.meta.env.VITE_API}/schools`);
         setSchools(response.data);
         setLoading(false);
       } catch (error) {
@@ -211,7 +211,7 @@ const Search = () => {
         />
         <button
           onClick={handleSearch}
-          className="w-1/5 p-2 bg-green-600 text-white rounded-md hover:bg-green-500 transition"
+          className="w-1/10 p-2 bg-green-600 text-white rounded-md hover:bg-green-500 transition"
         >
           Search
         </button>

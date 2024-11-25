@@ -18,6 +18,7 @@ import tutorialRoute from "./routes/tutorial.js"
 import storeRoute from "./routes/storeRoute.js"
 import { v4 as uuidv4 } from 'uuid';
 import Visitor from "./models/visitors.js";
+import jobrouter from "./routes/job/ejobsRoute.js";
 dotenv.config();
 
 
@@ -140,7 +141,7 @@ app.use("/tutorial", tutorialRoute)
 
 app.use("/store", storeRoute)
 
-
+app.use("/job", jobrouter)
 
  // Start server
  app.listen(PORT, () => {

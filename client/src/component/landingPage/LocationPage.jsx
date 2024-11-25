@@ -10,7 +10,7 @@ const LocationPage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:9000/schools') 
+      .get(`${import.meta.env.VITE_API}/schools`) 
       .then((response) => { 
        console.log("response", response.data)
         if (response.data && Array.isArray(response.data)) {

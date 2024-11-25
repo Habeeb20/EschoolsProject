@@ -44,6 +44,14 @@ import TutorialLogin from './pages/tutorial/TutorialLogin'
 import TutorialRegister from "./pages/tutorial/TutorialRegister"
 import TutorialDashboard from './pages/tutorial/TutorialDashboard'
 import TutorialDetails from './pages/tutorialHomepage/TutorialDetails'
+import Comparison from './pages/Admission/Comparison'
+import JobList from './pages/job/JobList'
+import JobLogin from './pages/job/JobLogin'
+import JobRegister from './pages/job/JobRegister'
+import PostJob from './pages/job/PostJob'
+import Application from './pages/job/Application'
+import JobDashboard from './pages/job/JobDashboard'
+import Admission from './pages/Admission/Admission'
 function App() {
 
 
@@ -112,6 +120,18 @@ function App() {
         <Route path="/tutorialregister" element={<TutorialRegister />} />
         <Route path="/tutorialdashboard" element={<TutorialDashboard />} />
         <Route path="/tutorial/:id" element={<TutorialDetails />}/>
+
+
+
+        <Route path="/admission" element={<Admission />} />
+        <Route path="/comparison" element={<Comparison />} />
+
+        <Route path="/joblist" element={<JobList />} />
+        <Route path="/joblogin" element={<JobLogin />} />
+        <Route path="/jobregister" element={<JobRegister />} />
+        <Route path="/post-job" element={<PostJob />} />
+        <Route path="/applications" element={<Application />} />
+        <Route path="/jobdashboard" element={<JobDashboard />} />
       </Routes>
       <Footer />
     
