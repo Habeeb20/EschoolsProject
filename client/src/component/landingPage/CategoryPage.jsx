@@ -97,7 +97,7 @@ const CategoryPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [activeOwnership, setActiveOwnership] = useState("All");
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_API}/schools`)
@@ -120,6 +120,7 @@ const CategoryPage = () => {
   useEffect(() => {
     const searchResults = schools.filter((school) =>
       school.schoolName.toLowerCase().includes(searchTerm.toLowerCase())
+    
     );
     setFilteredSchools(searchResults);
   }, [searchTerm, schools]);

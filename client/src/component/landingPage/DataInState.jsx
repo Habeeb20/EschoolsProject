@@ -129,6 +129,8 @@ const DataInState = () => {
                     item.picture3 ||
                     item.picture4 ||
                     item.picture5 ||
+                    item.picture6 ||
+                    item.picture7 ||
                     "https://via.placeholder.com/150"
                   }
                   alt={item.name || "Placeholder"}
@@ -142,6 +144,8 @@ const DataInState = () => {
                     item.fname ||
                     item.examBody ||
                     item.bookshopName ||
+                    item.tutorialName ||
+                    item.storeName ||
                     "N/A"}
                 </h3>
                 <p className="text-sm">
@@ -163,6 +167,13 @@ const DataInState = () => {
                       ? `/training/${item._id}`
                       : item.type === "exam"
                       ? `/exam/${item._id}`
+                      : item.type === "tutorial"
+                      ? `/tutorial/${item._id}`
+                        : item.type === "store"
+                      ? `/store/${item._id}`
+                        : item.type === "bookshop"
+                      ? `/bookshop/${item._id}`
+                      
                       : "#"
                   }
                 >

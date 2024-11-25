@@ -163,63 +163,63 @@ const SchoolsDetails = () => {
             />
             <div className="space-y-2">
               <p className="text-gray-700">
-                <span className="font-bold">Email:</span> {school.email}
+                <span className="font-bold text-black">Email:</span> {school.email}
               </p>
               <p className="text-gray-700">
-                <span className="font-bold">Phone:</span> {school.phone}
+                <span className="font-bold text-black">Phone:</span> {school.phone}
               </p>
               <p className="text-gray-700">
-                <span className="font-bold">State:</span> {school.state}
+                <span className="font-bold text-black">State:</span> {school.state}
               </p>
               <p className="text-gray-700">
-                <span className="font-bold">LGA:</span> {school.LGA}
+                <span className="font-bold text-black">LGA:</span> {school.LGA}
               </p>
               <p className="text-gray-700">
-                <span className="font-bold">Address:</span> {school.location}
+                <span className="font-bold text-black">Address:</span> {school.location}
               </p>
               <p className="text-gray-700">
-                <span className="font-bold">minimum school fees:</span> {school.schoolFees}
-              </p>
-
-              <p className="text-gray-700">
-                <span className="font-bold">school fees :</span> {school.schoolfees1} for {school.class1}
+                <span className="font-bold text-black">minimum school fees:</span> {school.schoolFees}
               </p>
 
-              
               <p className="text-gray-700">
-                <span className="font-bold">school fees :</span> {school.schoolfees2} for {school.class2}
+                <span className="font-bold text-black">school fees :</span> {school.schoolfees1} for {school.class1}
               </p>
 
               
               <p className="text-gray-700">
-                <span className="font-bold">school fees :</span> {school.schoolfees3} for {school.class3}
+                <span className="font-bold text-black">school fees :</span> {school.schoolfees2} for {school.class2}
               </p>
 
               
               <p className="text-gray-700">
-                <span className="font-bold">school fees :</span> {school.schoolfees4} for {school.class4}
+                <span className="font-bold text-black">school fees :</span> {school.schoolfees3} for {school.class3}
               </p>
 
               
               <p className="text-gray-700">
-                <span className="font-bold">school fees :</span> {school.schoolfees5} for {school.class5}
+                <span className="font-bold text-black">school fees :</span> {school.schoolfees4} for {school.class4}
               </p>
 
               
               <p className="text-gray-700">
-                <span className="font-bold">school fees :</span> {school.schoolfees6} for {school.class6}
+                <span className="font-bold text-black">school fees :</span> {school.schoolfees5} for {school.class5}
               </p>
 
               
               <p className="text-gray-700">
-                <span className="font-bold">school fees :</span> {school.schoolfees7} for {school.class7}
+                <span className="font-bold text-black">school fees :</span> {school.schoolfees6} for {school.class6}
+              </p>
+
+              
+              <p className="text-gray-700">
+                <span className="font-bold text-black">school fees :</span> {school.schoolfees7} for {school.class7}
               </p>
             </div>
           </div>
 
           <div className="space-y-2">
             <p className="text-gray-700">
-              <span className="font-bold">Principal/VC Speech:</span>{" "}
+              <span className="font-bold text-black">Principal/VC Speech:</span>{" "}
               {school.vcspeech}
             </p>
             <img
@@ -228,11 +228,11 @@ const SchoolsDetails = () => {
               className="w-full h-64 rounded-md object-cover shadow-lg"
             />
             <p className="text-gray-700">
-              <span className="font-bold">Aims and Objectives:</span>{" "}
+              <span className="font-bold text-black">Aims and Objectives:</span>{" "}
               {school.AO}
             </p>
             <p className="text-gray-700">
-              <span className="font-bold">History:</span> {school.history}
+              <span className="font-bold text-black">History:</span> {school.history}
             </p>
           </div>
 

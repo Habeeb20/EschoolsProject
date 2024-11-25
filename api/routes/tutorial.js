@@ -47,7 +47,7 @@ cloudinary.config({
   
       const hashedPassword = await bcrypt.hash(password, 10);
   
-      const exam = new Store({
+      const exam = new Tutorial({
         username,
         password: hashedPassword,
       });
@@ -144,7 +144,7 @@ cloudinary.config({
         }
     }
 
-    const updatedExam = await Exam.findByIdAndUpdate(id, updates, {
+    const updatedExam = await Tutorial.findByIdAndUpdate(id, updates, {
         new: true,
       });
       if (!updatedExam) {
@@ -231,11 +231,29 @@ router.post("/:id/shares", async(req, res) => {
     }
   });
 
+  router.get("/get-clicks/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+  
+      const exam = await Tutorial.findById(id);
+  
+      if (!exam) {
+        return res.status(404).json({ message: "exam not found" });
+      }
+  
+      res.status(200).json({ clicks: exam.clicks });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
+
 
 
   router.get("/get-clicks", async (req, res) => {
     try {
-      const exams = await Tutorial.find({}, "exam clicks"); // Fetch school name and clicks only
+      const exams = await Tutorial.find({}, "exam clicks"); 
   
       res.status(200).json(exams);
     } catch (error) {

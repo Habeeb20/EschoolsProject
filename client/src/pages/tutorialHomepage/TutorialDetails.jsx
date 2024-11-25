@@ -14,9 +14,7 @@ import {
 
 
 
-
-
-function TeacherDetails() {
+const TutorialDetails = () => {
 
     const { id } = useParams();
     const [school, setSchool] = useState(null);
@@ -30,15 +28,15 @@ function TeacherDetails() {
     const [userName, setUserName] = useState("");
     const [showModal, setShowModal] = useState(false);
 
+
     useEffect(() => {
         if (!id) {
           setError("exam ID not found");
           return;
         }
-    
         setLoading(true);
         axios
-          .get(`${import.meta.env.VITE_APIT}/ateacher/${id}`)
+          .get(`${import.meta.env.VITE_APITU}/atutorial/${id}`)
           .then((response) => {
             setSchool(response.data.exam);
             setComments(response.data.exam?.comments || []);
@@ -60,11 +58,10 @@ function TeacherDetails() {
         }
       };
 
-
       useEffect(() => {
        
         const fetchClickCount = async () => {
-          const response = await fetch(`${import.meta.env.VITE_APIT}/get-clicks/${id}`);
+          const response = await fetch(`${import.meta.env.VITE_APITU}/get-clicks/${id}`);
           const data = await response.json();
           console.log(data)
           setClickCount(data.clicks);
@@ -73,10 +70,10 @@ function TeacherDetails() {
         fetchClickCount();
       }, [id]);
 
-
+      
       useEffect(() => {
         axios
-          .get(`${import.meta.env.VITE_APIT}/${id}/shares`)
+          .get(`${import.meta.env.VITE_APITU}/${id}/shares`)
           .then((response) => {
             console.log("Share count fetched successfully:", response.data);
             setShareCount(response.data.shareCount || 0);
@@ -86,67 +83,65 @@ function TeacherDetails() {
           });
       }, [id]);
 
-
+      const handleShareClick = async () => {
+        try {
+          setShareCount((prev) => prev + 1);
+    
+          const response = await axios.post(
+            `${import.meta.env.VITE_APITU}/${id}/shares`
+          );
+          console.log("Share recorded successfully:", response.data);
+    
+          if (response.data && response.data.shareCount) {
+            setShareCount(response.data.shareCount);
+          }
+        } catch (error) {
+          console.error("Failed to record share:", error);
+    
+          setShareCount((prev) => prev - 1);
+          alert("Failed to record share. Please try again.");
+        }
+      };
 
       
-  const handleShareClick = async () => {
-    try {
-      setShareCount((prev) => prev + 1);
-
-      const response = await axios.post(
-        `${import.meta.env.VITE_APIT}/${id}/shares`
-      );
-      console.log("Share recorded successfully:", response.data);
-
-      if (response.data && response.data.shareCount) {
-        setShareCount(response.data.shareCount);
-      }
-    } catch (error) {
-      console.error("Failed to record share:", error);
-
-      setShareCount((prev) => prev - 1);
-      alert("Failed to record share. Please try again.");
-    }
-  };
-
-
      // Handle new comment submission
      const handleAddComment = () => {
-      if (newComment.trim() === "" || userName.trim() === "") return;
-  
-      const comment = { name: userName, text: newComment };
-      const updatedComments = [...comments, comment];
-      setComments(updatedComments);
-      setNewComment("");
-      setUserName("");
-      setShowModal(false);
-  
-      localStorage.setItem(
-        `school_${id}_comments`,
-        JSON.stringify(updatedComments)
-      );
-  
-      axios
-        .post(`${import.meta.env.VITE_APIT}/${id}/comments`, comment)
-        .then(() => {})
-        .catch((error) => console.error("Failed to post comment:", error));
-    };
-  
-      
-  if (error) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <p className="text-red-500 font-semibold text-lg">{error}</p>
-        <button
-          onClick={() => window.location.reload()}
-          className="bg-red-500 text-white px-6 py-3 rounded-md mt-4 hover:bg-red-600 transition"
-        >
-          Reload
-        </button>
-      </div>
-    );
-  }
+        if (newComment.trim() === "" || userName.trim() === "") return;
+    
+        const comment = { name: userName, text: newComment };
+        const updatedComments = [...comments, comment];
+        setComments(updatedComments);
+        setNewComment("");
+        setUserName("");
+        setShowModal(false);
+    
+        localStorage.setItem(
+          `school_${id}_comments`,
+          JSON.stringify(updatedComments)
+        );
+    
+        axios
+          .post(`${import.meta.env.VITE_APITU}/${id}/comments`, comment)
+          .then(() => {})
+          .catch((error) => console.error("Failed to post comment:", error));
+      };
 
+
+      if (error) {
+        return (
+          <div className="flex flex-col items-center justify-center  bg-gray-100">
+            <p className="text-red-500 font-semibold text-lg">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-red-500 text-white px-6 py-3 rounded-md mt-4 hover:bg-red-600 transition"
+            >
+              Reload
+            </button>
+          </div>
+        );
+      }
+
+      
   if (loading || !school) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -157,16 +152,16 @@ function TeacherDetails() {
   }
     
     
-    
-    
-    
 
+
+
+    
   return (
     <div className="p-4 md:p-8 bg-gray-100 min-h-screen">
     <div className="bg-white p-6 rounded-lg shadow-md space-y-6">
       {/* School Cover Image */}
       <img
-        src={school.picture2 || "https://via.placeholder.com/600x200"}
+        src={school.picture4 || school.picture1 || school.picture2 || school.picture3 || "https://via.placeholder.com/600x200"}
         alt={school.examBody}
         className="w-full h-64 rounded-md object-cover shadow-lg"
       />
@@ -174,7 +169,7 @@ function TeacherDetails() {
       {/* School Details */}
       <div className="flex flex-col space-y-6">
         <h1 className="font-bold text-3xl text-green-600 text-center">
-          {school.fname} {school.lname}
+          {school.tutorialName}
         </h1>
         <div className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
           <img
@@ -203,49 +198,27 @@ function TeacherDetails() {
 
         <div className="space-y-2">
         <p className="text-gray-700">
-            <span className="font-bold">professional summary:</span> {school.PS}
+            <span className="font-bold">price of form:</span> {school.formPrice}
           </p>
           <p className="text-gray-700">
-            <span className="font-bold">Qualification:</span>{" "}
-            {school.qualification}
+            <span className="font-bold">we prepare students for:</span>{" "}
+            {school.exam1}
+            {school.exam2}
+            {school.exam3}
+            {school.exam4}
+            {school.exam5}
+            {school.otherclasses}
           </p>
-          <p className="text-gray-700">
-            <span className="font-bold">school attended:</span>{" "}
-            {school.school}
-          </p>
+     
           {/* <img
             src={school.picture3 || "https://via.placeholder.com/600x200"}
             alt={school.examBody}
             className="w-full h-64 rounded-md object-cover shadow-lg"
           /> */}
-          <p className="text-gray-700">
-            <span className="font-bold">Grade graduated with:</span>{" "}
-            {school.grade}
-          </p>
-          <p className="text-gray-700">
-            <span className="font-bold">course studied:</span> {school.course}
-          </p>
+       
 
-          <p className="text-gray-700">
-            <span className="font-bold">subject specialized on:</span> {school.specialization}
-          </p>
 
-          <p className="text-gray-700">
-            <span className="font-bold">work experience:</span> {school.YOE}
-          </p>
-
-          <p className="text-gray-700">
-            <span className="font-bold">currently have a job:</span> {school.haveajob}
-          </p>
-
-          <p className="text-gray-700">
-            <span className="font-bold">current teaching class range:</span> {school.whatcategory}
-          </p>
-
-          <p className="text-gray-700">
-            <span className="font-bold">seeking for employment:</span> {school.lookingforateachingjob}
-          </p>
-        </div>
+      
 
         {/* Grid Picture */}
         <div className="p-2 min-h-screen mb-negative">
@@ -382,7 +355,9 @@ function TeacherDetails() {
       )}
     </div>
   </div>
+  </div>
+  
   )
 }
 
-export default TeacherDetails
+export default TutorialDetails

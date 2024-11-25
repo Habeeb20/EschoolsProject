@@ -6,6 +6,7 @@ import { useState } from 'react';
 const StoreLogin = () => {
     const [form, setForm] = useState({ username: "", password: "" });
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('')
     const navigate = useNavigate();
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,12 +23,14 @@ const StoreLogin = () => {
           navigate("/storedashboard");
         } catch (err) {
           setLoading(false);
+          setError(err.response?.data?.message)
           toast.error(err.response?.data?.message || "Login failed. Please try again.");
         }
       };
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
     <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
+    {error && <p className='text-red-500'>{error}</p>}
       <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Store account Login</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>

@@ -234,7 +234,7 @@ router.post("/:id/shares", async(req, res) => {
 router.post("/:id/click", async (req, res) => {
     try {
       const { id } = req.params;
-      const exam = await store.findByIdAndUpdate(
+      const exam = await Store.findByIdAndUpdate(
         id,
         { $inc: { clicks: 1 } },
         { new: true }

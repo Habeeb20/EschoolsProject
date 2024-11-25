@@ -25,7 +25,7 @@ const TutorialRegister = () => {
         navigate("/tutoriallogin");
       } catch (err) {
         setLoading(false);
-        toast.error(err.response?.data?.message || "Login failed. Please try again.");
+        toast.error("Login failed. Please try again.");
       }
     };
   return (
