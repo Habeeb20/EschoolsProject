@@ -110,7 +110,7 @@ const Dashboard = () => {
         const fetchData = async () => {
           try {
             const token = localStorage.getItem('token');
-            const { data } = await axios.get('http://localhost:9000/schools/dashboard', {
+            const { data } = await axios.get('https://api.eschoolconnect.ng/schools/dashboard', {
               headers: { Authorization: `Bearer ${token}` },
             });
         
@@ -142,7 +142,7 @@ const Dashboard = () => {
         try {
           const token = localStorage.getItem('token');
           await axios.put(
-            `http://localhost:9000/schools/${userId}`,
+            `https://api.eschoolconnect.ng/schools/${userId}`,
             userData,
             {
               headers: { Authorization: `Bearer ${token}` },

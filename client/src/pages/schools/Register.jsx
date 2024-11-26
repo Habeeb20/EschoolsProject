@@ -16,7 +16,7 @@ const Register = () => {
         setError('');
         setLoading(true);
         try {
-          await axios.post('http://localhost:9000/schools/register', { username, password });
+          await axios.post('https://api.eschoolconnect.ng/schools/register', { username, password });
           toast.success('Registration successful!');
           navigate('/schoolslogin');
         } catch (err) {

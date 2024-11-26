@@ -17,7 +17,7 @@ const Login = () => {
         setError('')
         setLoading(true)
         try {
-            const { data } = await axios.post('http://localhost:9000/schools/login', { username, password });
+            const { data } = await axios.post('https://api.eschoolconnect.ng/schools/login', { username, password });
             localStorage.setItem('token', data.token);
             toast.success('Login successful!');
             navigate('/schoolsdashboard');
