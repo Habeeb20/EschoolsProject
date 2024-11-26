@@ -28,7 +28,7 @@ const app = express()
 app.use(express.json())
 
 
-app.use(cors())
+app.use(cors("https://eschoolconnect.ng/"))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use(cookieParser()); 
@@ -147,3 +147,7 @@ app.use("/job", jobrouter)
  app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
+
+app.get("/", (req, res) => {
+    res.json("the api is perfectly working right now...")
+  })

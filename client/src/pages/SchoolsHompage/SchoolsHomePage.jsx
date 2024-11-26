@@ -177,7 +177,7 @@ export default function SchoolsHomePage() {
   useEffect(() => {
     const fetchSchools = async () => {
       try {
-        const response = await fetch("http://localhost:9000/schools");
+        const response = await fetch("https://api.eschoolconnect.ng/schools");
         const data = await response.json();
         setCardDetails(data);
       } catch (error) {
@@ -309,7 +309,7 @@ export default function SchoolsHomePage() {
                   onClick={async () => {
                     try {
                       await axios.post(
-                        `http://localhost:9000/schools/${card._id}/click`
+                        `https://api.eschoolconnect.ng/schools/${card._id}/click`
                       );
                       console.log("Click count incremented");
                     } catch (error) {

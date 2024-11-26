@@ -190,32 +190,33 @@ const Search = () => {
   return (
     <div className="p-0 m-0 font-sans">
       <div className="text-center mt-10 mb-6">
-        <h3 className="text-3xl font-semibold"></h3>
+        <h6 className="text-2xl font-semibold">Search for your school of choice by name, category and location</h6>
       </div>
 
       {/* Search Filters */}
-      <div className="flex flex-nowrap justify-between items-center gap-2 mb-6">
-        <input
-          type="text"
-          placeholder="Search by school name"
-          value={searchName}
-          onChange={(e) => setSearchName(e.target.value)}
-          className="w-2/5 p-2 rounded-md border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-        />
-        <input
-          type="text"
-          placeholder="Search by location"
-          value={searchLocation}
-          onChange={(e) => setSearchLocation(e.target.value)}
-          className="w-2/5 p-2 rounded-md border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-        />
-        <button
-          onClick={handleSearch}
-          className="w-1/10 p-2 bg-green-600 text-white rounded-md hover:bg-green-500 transition"
-        >
-          Search
-        </button>
-      </div>
+      <div className="flex flex-wrap sm:flex-nowrap flex-col sm:flex-row justify-between items-center gap-2 mb-6">
+  <input
+    type="text"
+    placeholder="Search by school name"
+    value={searchName}
+    onChange={(e) => setSearchName(e.target.value)}
+    className="w-full sm:w-2/5 p-2 rounded-md border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+  />
+  <input
+    type="text"
+    placeholder="Search by location"
+    value={searchLocation}
+    onChange={(e) => setSearchLocation(e.target.value)}
+    className="w-full sm:w-2/5 p-2 rounded-md border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+  />
+  <button
+    onClick={handleSearch}
+    className="w-full sm:w-1/10 p-2 bg-green-600 text-white rounded-md hover:bg-green-500 transition"
+  >
+    Search
+  </button>
+</div>
+
 
       {/* Display loading state */}
       {loading ? (

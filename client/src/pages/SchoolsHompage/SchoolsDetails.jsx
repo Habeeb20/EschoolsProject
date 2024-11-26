@@ -31,7 +31,7 @@ const SchoolsDetails = () => {
 
     setLoading(true);
     axios
-      .get(`http://localhost:9000/schools/aschool/${id}`)
+      .get(`https://api.eschoolconnect.ng/schools/aschool/${id}`)
       .then((response) => {
         setSchool(response.data.school);
         setComments(response.data.school.comments || []);
@@ -56,7 +56,7 @@ const SchoolsDetails = () => {
   useEffect(() => {
     // Fetch the click count for the school
     const fetchClickCount = async () => {
-      const response = await fetch(`http://localhost:9000/schools/get-clicks/${id}`);
+      const response = await fetch(`https://api.eschoolconnect.ng/schools/get-clicks/${id}`);
       const data = await response.json();
       console.log(data)
       setClickCount(data.clicks);
@@ -67,7 +67,7 @@ const SchoolsDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:9000/schools/${id}/shares`)
+      .get(`https://api.eschoolconnect.ng/schools/${id}/shares`)
       .then((response) => {
         console.log("Share count fetched successfully:", response.data);
         setShareCount(response.data.shareCount || 0);
@@ -82,7 +82,7 @@ const SchoolsDetails = () => {
       setShareCount((prev) => prev + 1);
 
       const response = await axios.post(
-        `http://localhost:9000/schools/${id}/shares`
+        `https://api.eschoolconnect.ng/schools/${id}/shares`
       );
       console.log("Share recorded successfully:", response.data);
 
@@ -112,7 +112,7 @@ const SchoolsDetails = () => {
     );
 
     axios
-      .post(`http://localhost:9000/schools/${id}/comments`, comment)
+      .post(`https://api.eschoolconnect.ng/schools/${id}/comments`, comment)
       .then(() => {})
       .catch((error) => console.error("Failed to post comment:", error));
   };
