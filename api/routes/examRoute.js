@@ -352,6 +352,17 @@ router.get("/get-clicks/:id", async (req, res) => {
     }
   });
 
+  router.get("/count", async (req, res) => {
+    try {
+      const teacherCount = await Exam.countDocuments();
+      res.status(200).json({ count: teacherCount });
+    } catch (error) {
+      console.error("Error fetching teacher count:", error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+
+
 
   export default router
   

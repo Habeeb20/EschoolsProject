@@ -3,6 +3,7 @@ const bookshopSchema = new mongoose.Schema({
   username:{type:String, required:true},
   password:{type:String, required:true},
   bookshopName:String,
+  BookOrLibrary:String,
   email:String,
   phone:String,
   state:String,

@@ -33,9 +33,9 @@ const LoginJob = ({ onLogin }) => {
         password: formData.password,
       });
 
-      localStorage.setItem('token', response.data.token); // Save token to localStorage
+      localStorage.setItem('token', response.data.token); 
       toast.success('Login successful!');
-      onLogin(response.data.user);
+  
 
       // Navigate to the respective route
       if (formData.userType === 'seeker') {

@@ -10,6 +10,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const EjobsLandingPage = () => {
 const[schools, setSchools] = useState([])
   const [jobs, setJobs] = useState([]);
+  
   const [chartData, setChartData] = useState({
     labels: ['Jobs Posted', 'Employers', 'Job Seekers'],
     datasets: [
@@ -24,8 +25,9 @@ const[schools, setSchools] = useState([])
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_APIJ}/alljobs`);
-        setJobs(response.data.jobs);
+        const response = await axios.get(`${import.meta.env.VITE_APIJ}/alljobs`, );
+        console.log(response.data)
+        setJobs(response.data);
         
         // Example data for pie chart
         setChartData((prevData) => ({
@@ -81,12 +83,66 @@ const[schools, setSchools] = useState([])
         </Link>
       </div>
 
-      {/* Pie Chart */}
-      <div className="">
-        <h2 className="text-2xl font-semibold text-center ">Job Statistics</h2>
-        <div className="flex justify-center">
-          <Pie data={chartData} width={300} height={300} />
-        </div>
+    
+      <div className="mt-6">
+  <h2 className="text-2xl font-semibold text-center mb-4">Job Statistics</h2>
+  <div className="flex justify-center items-center">
+    <div
+      className="bg-white p-6 rounded-lg shadow-lg w-full sm:w-2/3 lg:w-1/3"
+      style={{
+        maxWidth: "400px",
+      }}
+    >
+      <Pie
+        data={chartData}
+        options={{
+          responsive: true,
+          plugins: {
+            legend: {
+              display: true,
+              position: "bottom",
+              labels: {
+                font: {
+                  size: 14,
+                },
+                color: "#333",
+              },
+            },
+            tooltip: {
+              backgroundColor: "#f4f4f4",
+              titleFont: { size: 16 },
+              bodyFont: { size: 14 },
+              borderColor: "#ddd",
+              borderWidth: 1,
+            },
+          },
+        }}
+      />
+    </div>
+  </div>
+</div>
+
+         {/* Job Listings */}
+         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
+        {jobs?.map((job) => (
+          <div key={job._id} className="bg-white  rounded-lg shadow-lg hover:shadow-2xl transition">
+            <h2 className="text-xl font-semibold text-blue-600">Job title: {job.title}</h2>
+            <p className="text-gray-700 mt-2">Job description: {job.description}</p>
+            <p className="text-gray-700 mt-2">Job location{job.location}</p>
+            <div className="mt-4">
+              <Link
+                to="/joblogin"
+                className="text-blue-500 hover:text-blue-700"
+              >
+              <button onClick={() => toast.error("you have to login to ur jobseeker account before you can apply for a job")}>
+              Apply Now
+
+              </button>
+              
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
  
  
@@ -100,7 +156,7 @@ const[schools, setSchools] = useState([])
       {schools.map((school) => (
         <div key={school.id} className="bg-white p-6 rounded-lg shadow-lg transition transform  hover:shadow-2xl duration-300">
           {/* School Details */}
-          <h2 className="text-xl font-semibold text-center text-blue-600 mb-4">You can also apply for the vacant jobs in this school via email</h2>
+          <h2 className="text-xl font-semibold text-center text-blue-600 mb-4">You can also apply for the vacant jobs in these schools via email</h2>
 
           {/* School Vacant Positions in Separate Grid Boxes */}
           <div className="grid grid-cols-1 gap-6 mt-4 w-full">
@@ -172,23 +228,7 @@ const[schools, setSchools] = useState([])
 
 
 
-      {/* Job Listings */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
-        {jobs?.map((job) => (
-          <div key={job._id} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
-            <h2 className="text-xl font-semibold text-blue-600">{job.title}</h2>
-            <p className="text-gray-700 mt-2">{job.description}</p>
-            <div className="mt-4">
-              <Link
-                to={`/apply-job/${job._id}`}
-                className="text-blue-500 hover:text-blue-700"
-              >
-                Apply Now
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div>
+   
     </div>
   );
 };

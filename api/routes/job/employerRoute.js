@@ -19,27 +19,62 @@ postjobroute.post("/postjob", protectEmployer, async (req, res) => {
 });
 
 
+postjobroute.get("/myjobs", protectEmployer, async (req, res) => {
+  try {
+    const employerId = req.user.id; 
+
+    // Find jobs posted by the employer
+    const jobs = await Job.find({ employer: employerId });
+
+    res.status(200).json({ jobs });
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching jobs", error: error.message });
+  }
+});
 
 
-postjobroute.get("/getapplicant", async (req, res) => {
+
+
+
+
+// postjobroute.get("/getapplicant", protectEmployer, async (req, res) => {
+//     try {
+//       const { jobId } = req.params;
+  
+//       // Find the job by ID and populate the applications field
+//       const job = await Job.findById(jobId).populate('applications', 'name email resume');
+  
+//       if (!job) {
+//         return res.status(404).json({ message: 'Job not found' });
+//       }
+  
+//       // Ensure only the job's employer can view applicants
+//       if (job.employer.toString() !== req.user._id.toString()) {
+//         return res.status(403).json({ message: 'Not authorized to view applicants' });
+//       }
+  
+//       res.status(200).json(job.applications);
+//     } catch (error) {
+//       res.status(500).json({ message: error.message });
+//     }
+//   })
+
+
+
+  postjobroute.get("/getapplicant", protectEmployer, async (req, res) => {
     try {
-      const { jobId } = req.params;
-  
-      // Find the job by ID and populate the applications field
-      const job = await Job.findById(jobId).populate('applications', 'name email resume');
-  
-      if (!job) {
-        return res.status(404).json({ message: 'Job not found' });
-      }
-  
-      // Ensure only the job's employer can view applicants
-      if (job.employer.toString() !== req.user._id.toString()) {
+      const jobs = await Job.find({ employer: req.user.id }).populate("applicants", "name email");
+      if (jobs.employer.toString() !== req.user._id.toString()) {
         return res.status(403).json({ message: 'Not authorized to view applicants' });
       }
-  
-      res.status(200).json(job.applications);
+      res.status(200).json(jobs);
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      console.error("Error fetching employer dashboard data:", error);
+      res.status(500).json({ message: "Server error" });
     }
-  })
+  });
+  
+
+
+
 export default postjobroute

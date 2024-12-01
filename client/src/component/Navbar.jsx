@@ -68,6 +68,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link to="/bookshophomepage" className="text-white hover:text-yellow-400 transition duration-300">
+                Ebook
+              </Link>
+            </li>
+            <li>
               <Link to="/comparison" className="text-white hover:text-yellow-400 transition duration-300">
                 comparison
               </Link>
@@ -78,7 +83,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/abroadhomepage" className="text-white hover:text-yellow-400 transition duration-300">
+              <Link to="/scholarship" className="text-white hover:text-yellow-400 transition duration-300">
                 Study-abroad
               </Link>
             </li>

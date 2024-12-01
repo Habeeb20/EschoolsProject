@@ -8,6 +8,7 @@ const BookDashboard = () => {
   const [userData, setUserData] = useState({
     bookshopName: '',
     email: '',
+    BookOrLibrary:'',
     phone: '',
     state: '',
     LGA: '',
@@ -130,6 +131,9 @@ const BookDashboard = () => {
     </p>
     <p>
       Bookshop Name: <span className="font-semibold">{user.bookshopName}</span>
+    </p>
+    <p>
+      Bookshop or Library: <span className="font-semibold">{user.BookOrLibrary}</span>
     </p>
     <p>
       Email: <span className="font-semibold">{user.email}</span>
@@ -261,7 +265,7 @@ const BookDashboard = () => {
               {/* New input fields */}
               <div className="flex flex-col">
                 <label className="block text-sm font-medium text-gray-600 mb-1">
-                 Name of Bookshop
+                 Name of Bookshop or Library
                 </label>
                 <input
                   type="text"
@@ -271,6 +275,26 @@ const BookDashboard = () => {
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
               </div>
+              <div className="flex flex-col">
+                        <label
+                          htmlFor="BookOrLibrary"
+                          className="block text-sm font-medium text-gray-600 mb-1"
+                        >
+                            Bookshop or Library
+                        </label>
+                        <select
+                          name="BookOrLibrary"
+                          id="BookOrLibrary"
+                          onChange={handleChange}
+                          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        >
+                          <option value="">Select </option>
+                          <option value="Bookshop">Bookshop</option>
+                          <option value="Library">Library</option>
+                    
+                        </select>
+                      </div>
+              
     
               <div className="flex flex-col">
                 <label className="block text-sm font-medium text-gray-600 mb-1">
@@ -296,7 +320,7 @@ const BookDashboard = () => {
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
               </div>
-              
+          
               <div className="flex flex-col">
                 <label className="block text-sm font-medium text-gray-600 mb-1">
                   State

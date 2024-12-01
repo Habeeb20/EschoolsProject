@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs';
+import bcrypt from "bcryptjs"
 import jwt from 'jsonwebtoken';
 import Employer from '../../models/jobs/Employer.js';
 import JobSeeker from '../../models/jobs/JobSeeker.js';
@@ -28,22 +28,36 @@ authJobrouter.post ('/registeremployer', async (req, res) => {
 });
 
 // Job Seeker Register
-authJobrouter.post ('/registerjobseeker', async (req, res) => {
+authJobrouter.post('/registerjobseeker', async (req, res) => {
   const { name, email, password } = req.body;
+  
+
+  if (!name || !email || !password) {
+    return res.status(400).json({ message: 'All fields (name, email, password) are required.' });
+  }
+
   try {
+ 
     const jobSeekerExists = await JobSeeker.findOne({ email });
-    if (jobSeekerExists) return res.status(400).json({ message: 'Job Seeker already exists' });
+    if (jobSeekerExists) {
+      return res.status(400).json({ message: 'Job Seeker already exists' });
+    }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+
     const jobSeeker = new JobSeeker({ name, email, password: hashedPassword });
     await jobSeeker.save();
 
     const token = generateToken(jobSeeker._id);
+    
+
     res.status(201).json({ message: 'Job Seeker registered successfully', token });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.error('Error during registration:', err);
+    res.status(500).json({ message: 'Server error, please try again later.' });
   }
 });
+
 
 // Employer Login Logic
 authJobrouter.post('/employerlogin', async (req, res) => {
@@ -77,25 +91,29 @@ authJobrouter.post('/employerlogin', async (req, res) => {
       },
     });
   } catch (error) {
+    console.log(error)
     res.status(500).json({ message: error.message });
   }
 });
 
-// Job Seeker Login Logic
+
 authJobrouter.post('/jobseekerlogin', async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    // Check if job seeker exists
-    const seeker = await Seeker.findOne({ email });
+  
+    const seeker = await JobSeeker.findOne({ email });
     if (!seeker) {
-      return res.status(404).json({ message: 'Job Seeker not found' });
+      return res.status(404).json({ message: 'Job Seeker account not found' });
     }
 
-    // Compare passwords
-    const isMatch = await seeker.comparePassword(password);
+    console.log("Logging in seeker:", seeker); 
+
+    
+    const isMatch = await bcrypt.compare(password, seeker.password);
+
     if (!isMatch) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(400).json({ message: 'Incorrect password' });
     }
 
     // Generate JWT token
@@ -113,38 +131,38 @@ authJobrouter.post('/jobseekerlogin', async (req, res) => {
       },
     });
   } catch (error) {
+    console.error(error); // Debugging error
     res.status(500).json({ message: error.message });
   }
 });
-
-
-// Get All Jobs Logic
 authJobrouter.get('/alljobs', async (req, res) => {
   try {
-    // Retrieve all employers with their job postings
-    const employers = await Employer.find({}, 'name jobs').populate('jobPosts');
+ 
+    const employers = await Employer.find({}, 'name jobPosts').populate({
+      path: 'jobPosts', 
+      model: 'Job', 
+    });
 
-    // Extract and structure the jobs data
+    
     const jobs = employers.flatMap((employer) =>
-      // Check if employer.jobs exists and is an array before calling map
-      Array.isArray(employer.jobs) 
-        ? employer.jobs.map((job) => ({
+      Array.isArray(employer.jobPosts)
+        ? employer.jobPosts.map((job) => ({
             jobId: job._id,
             title: job.title,
             description: job.description,
+            location:job.location,
             employerName: employer.name,
-            applicantsCount: job.applicants.length,
+            applicantsCount: job.applicants.length || 0,
           }))
         : []
     );
 
     res.status(200).json(jobs);
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).json({ message: error.message });
   }
 });
-
 
 
 

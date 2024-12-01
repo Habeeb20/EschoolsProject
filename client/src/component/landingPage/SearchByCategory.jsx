@@ -13,7 +13,10 @@ const SearchByCategory = () => {
     college: 0,
     polytechnic: 0,
     university: 0,
-    teachers: 0, // Initialize teachers count
+    teachers: 0, 
+    exams:0,
+    bookshops:0,
+    tutorial:0,
   });
 
   const categories = [
@@ -23,6 +26,9 @@ const SearchByCategory = () => {
     { name: "Polytechnic", icon: <FaBuilding />, category: "polytechnic" },
     { name: "University", icon: <FaUniversity />, category: "university" },
     { name: "Teachers", icon: <FaUniversity />, category: "teachers" },
+    { name: "Exams", icon: <FaGraduationCap />, category: "exams" },
+    { name: "Bookshops", icon: <FaBuilding />, category: "bookshops" },
+    { name: "Tutorials", icon: <FaSchool />, category: "tutorials" },
   ];
 
   const handleCategoryClick = (category) => {
@@ -37,13 +43,19 @@ const SearchByCategory = () => {
         const schoolResponse = await axios.get(`${import.meta.env.VITE_API}/schools/category/counts`);
         // Fetch teacher count
         const teacherResponse = await axios.get(`${import.meta.env.VITE_API}/teacher/count`);
+        const examResponse = await axios.get(`${import.meta.env.VITE_APIE}/count`);
+        const bookshopResponse = await axios.get(`${import.meta.env.VITE_APIB}/count`);
+        const tutorialResponse = await axios.get(`${import.meta.env.VITE_APITU}/count`);
 
         setCategoryCounts({
           ...schoolResponse.data,
-          teachers: teacherResponse.data.count, // Assume the backend returns `{ count: <number> }`
+          teachers: teacherResponse.data.count, 
+          exams: examResponse.data.count, 
+          bookshops: bookshopResponse.data.count,
+          tutorials: tutorialResponse.data.count,  
         });
 
-        console.log({ ...schoolResponse.data, teachers: teacherResponse.data.count });
+        console.log({ ...schoolResponse.data, teachers: teacherResponse.data.count,    exams: examResponse.data.count,    bookshops: bookshopResponse.data.count,      tutorials: tutorialResponse.data.count,   });
       } catch (error) {
         console.error("Error fetching category counts:", error);
       }

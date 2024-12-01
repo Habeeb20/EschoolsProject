@@ -52,6 +52,9 @@ import RegisterJob from './pages/Ejobs/RegisterJob'
 import EmployerDashboard from './pages/Ejobs/EmployerDashboard'
 import JobSeekerDashboard from './pages/Ejobs/JobSeeker'
 import EjobsLandingPage from './pages/Ejobs/EjobsLandingPage'
+import Scholarship from './pages/Scholarship'
+import BookHomePage from './pages/BookHompeage/BookHomePage'
+import BookDetails from './pages/BookHompeage/BookDetails'
 function App() {
 
 
@@ -107,6 +110,8 @@ function App() {
        <Route path="/bookshoplogin" element={<BookLogin />} />
        <Route path="/bookshopregister" element={<BookRegister />} />
        <Route path="/bookshopdashboard" element={<BookDashboard />} />
+       <Route path="/bookshophomepage" element={<BookHomePage />} />
+       <Route path="/bookshop/:id" element={<BookDetails />} />
 
        <Route path="/storedashboard" element={<StoreDashboard />} />
        <Route path="/storelogin" element={<StoreLogin />} />
@@ -132,6 +137,9 @@ function App() {
         <Route path="/jobseekerdashboard" element={<JobSeekerDashboard />} />
 
         <Route path="/joblandingpage" element={<EjobsLandingPage />} />
+
+
+        <Route path="/scholarship" element={<Scholarship />} />
       </Routes>
       <Footer />
     
