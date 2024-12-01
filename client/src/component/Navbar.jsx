@@ -48,6 +48,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link to="/joblandingpage" className="text-white hover:text-yellow-400 transition duration-300">
+                Ejobs
+              </Link>
+            </li>
+            <li>
               <Link to="/traininghomepage" className="text-white hover:text-yellow-400 transition duration-300">
                 Training
               </Link>

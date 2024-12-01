@@ -116,90 +116,89 @@ const StoreDashboard = () => {
     
   return (
     <div className="flex flex-col items-center p-5 bg-gray-100 min-h-screen overflow-y-auto">
-    <div className="flex flex-col items-center bg-gray-100 p-6 min-h-screen">
-    {/* Header Section */}
-    <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-      Welcome
-    </h1>
-    <p className="text-lg text-gray-700 text-center">
-      Username: <span className="font-semibold">{user.username}</span>
+<div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-6 max-w-4xl mx-auto min-h-screen">
+  {/* Header Section */}
+  <h1 className="text-3xl font-extrabold text-blue-600 mb-4 text-center">
+    Welcome
+  </h1>
+  <div className="bg-gray-100 rounded-lg shadow-md p-4 mb-6 w-full text-center">
+    <p className="text-lg text-gray-800 mb-2">
+      <span className="font-bold">Username:</span> {user.username}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-     store Name : <span className="font-semibold">{user.storeName}</span>
+    <p className="text-lg text-gray-800 mb-2">
+      <span className="font-bold">Store Name:</span> {user.storeName}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      Email: <span className="font-semibold">{user.email}</span>
+    <p className="text-lg text-gray-800 mb-2">
+      <span className="font-bold">Email:</span> {user.email}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      Phone: <span className="font-semibold">{user.phone}</span>
+    <p className="text-lg text-gray-800 mb-2">
+      <span className="font-bold">Phone:</span> {user.phone}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      Address: <span className="font-semibold">{user.location}</span>
+    <p className="text-lg text-gray-800 mb-2">
+      <span className="font-bold">Address:</span> {user.location}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      LGA: <span className="font-semibold">{user.LGA}</span>
+    <p className="text-lg text-gray-800 mb-2">
+      <span className="font-bold">LGA:</span> {user.LGA}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      State: <span className="font-semibold">{user.state}</span>
+    <p className="text-lg text-gray-800">
+      <span className="font-bold">State:</span> {user.state}
     </p>
+  </div>
 
-    <div className="flex flex-wrap justify-center gap-4 mt-6">
-     
-   
-     {user.picture1 && (
-       <img
-         src={user.picture1}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture2 && (
-       <img
-         src={user.picture2}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture3 && (
-       <img
-         src={user.picture3}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture4 && (
-       <img
-         src={user.picture4}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
+  {/* Picture Section */}
+  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+    {user.picture1 && (
+      <img
+        src={user.picture1}
+        alt="Picture 1"
+        className="w-full h-40 rounded-lg shadow-lg object-cover"
+      />
+    )}
+    {user.picture2 && (
+      <img
+        src={user.picture2}
+        alt="Picture 2"
+        className="w-full h-40 rounded-lg shadow-lg object-cover"
+      />
+    )}
+    {user.picture3 && (
+      <img
+        src={user.picture3}
+        alt="Picture 3"
+        className="w-full h-40 rounded-lg shadow-lg object-cover"
+      />
+    )}
+    {user.picture4 && (
+      <img
+        src={user.picture4}
+        alt="Picture 4"
+        className="w-full h-40 rounded-lg shadow-lg object-cover"
+      />
+    )}
+    {user.picture5 && (
+      <img
+        src={user.picture5}
+        alt="Picture 5"
+        className="w-full h-40 rounded-lg shadow-lg object-cover"
+      />
+    )}
+    {user.picture6 && (
+      <img
+        src={user.picture6}
+        alt="Picture 6"
+        className="w-full h-40 rounded-lg shadow-lg object-cover"
+      />
+    )}
+    {user.picture7 && (
+      <img
+        src={user.picture7}
+        alt="Picture 7"
+        className="w-full h-40 rounded-lg shadow-lg object-cover"
+      />
+    )}
+  </div>
+</div>
 
-     {user.picture5 && (
-       <img
-         src={user.picture5}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-
-     {user.picture6 && (
-       <img
-         src={user.picture6}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-
-     {user.picture7 && (
-       <img
-         src={user.picture7}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     </div>
-    </div>
      
     {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">

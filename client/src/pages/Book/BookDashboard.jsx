@@ -119,109 +119,109 @@ const BookDashboard = () => {
  
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '20px' }}>
-      <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-      Welcome
-    </h1>
-    <p className="text-lg text-gray-700 text-center">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '20px' }} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <h1 className="text-3xl font-bold text-gray-800 text-center">
+    Welcome
+  </h1>
+  
+  <div className="text-lg text-gray-700 text-center">
+    <p>
       Username: <span className="font-semibold">{user.username}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      Bookshop Name : <span className="font-semibold">{user.bookshopName}</span>
+    <p>
+      Bookshop Name: <span className="font-semibold">{user.bookshopName}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
+    <p>
       Email: <span className="font-semibold">{user.email}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      phone number: <span className="font-semibold">{user.phone}</span>
+    <p>
+      Phone Number: <span className="font-semibold">{user.phone}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
+    <p>
       Address: <span className="font-semibold">{user.location}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
+    <p>
       LGA: <span className="font-semibold">{user.LGA}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
+    <p>
       State: <span className="font-semibold">{user.state}</span>
     </p>
-    <div className="flex flex-wrap justify-center gap-4 mt-6">
-     
-   
-     {user.picture1 && (
-       <img
-         src={user.picture1}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture2 && (
-       <img
-         src={user.picture2}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture3 && (
-       <img
-         src={user.picture3}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture4 && (
-       <img
-         src={user.picture4}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
+  </div>
 
-     {user.picture5 && (
-       <img
-         src={user.picture5}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture6 && (
-       <img
-         src={user.picture6}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture7 && (
-       <img
-         src={user.picture7}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture8 && (
-       <img
-         src={user.picture8}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture9 && (
-       <img
-         src={user.picture9}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-     {user.picture10 && (
-       <img
-         src={user.picture10}
-         alt="School"
-         className="w-36 h-36 rounded-lg shadow-md object-cover"
-       />
-     )}
-  
-   </div>
- 
-      </div>
+  <div className="flex flex-wrap justify-center gap-6 mt-6">
+    {user.picture1 && (
+      <img
+        src={user.picture1}
+        alt="Bookshop Image 1"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture2 && (
+      <img
+        src={user.picture2}
+        alt="Bookshop Image 2"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture3 && (
+      <img
+        src={user.picture3}
+        alt="Bookshop Image 3"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture4 && (
+      <img
+        src={user.picture4}
+        alt="Bookshop Image 4"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture5 && (
+      <img
+        src={user.picture5}
+        alt="Bookshop Image 5"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture6 && (
+      <img
+        src={user.picture6}
+        alt="Bookshop Image 6"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture7 && (
+      <img
+        src={user.picture7}
+        alt="Bookshop Image 7"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture8 && (
+      <img
+        src={user.picture8}
+        alt="Bookshop Image 8"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture9 && (
+      <img
+        src={user.picture9}
+        alt="Bookshop Image 9"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture10 && (
+      <img
+        src={user.picture10}
+        alt="Bookshop Image 10"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+  </div>
+</div>
+
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-xl max-h-[90vh] overflow-y-auto">

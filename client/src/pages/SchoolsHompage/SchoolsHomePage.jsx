@@ -192,10 +192,10 @@ export default function SchoolsHomePage() {
     const matchesCategory =
       activeCategory === "All" || card.category === activeCategory;
     const matchesOwnership =
-      activeOwnership === "All" || (card.ownership && card.ownership.toLowerCase() === activeOwnership.toLowerCase());
-    const matchesSearchTerm = card.schoolName
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+      activeOwnership === "All" || (card.ownership && card.ownership?.toLowerCase() === activeOwnership.toLowerCase());
+    const matchesSearchTerm = (card && card.schoolName
+      ?.toLowerCase())
+      ?.includes(searchTerm.toLowerCase());
     return matchesCategory && matchesOwnership && matchesSearchTerm;
   });
 
@@ -258,6 +258,8 @@ export default function SchoolsHomePage() {
           ))}
         </nav>
       )}
+    
+
 
       {/* Search Bar */}
       <div className="flex justify-center w-full py-8 bg-white">
@@ -272,6 +274,13 @@ export default function SchoolsHomePage() {
         <button className="bg-green-500 text-white px-4 py-2 rounded-r-md hover:bg-green-600">
           Search
         </button>
+      </div>
+
+      <div className="">
+        <Link to="/schoolslogin">
+        <h6 className="text-2xl font-semibold text-green-600 text-right ">Login</h6>
+        </Link>
+      
       </div>
 
       {/* School Cards */}

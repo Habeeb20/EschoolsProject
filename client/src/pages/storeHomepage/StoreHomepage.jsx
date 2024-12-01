@@ -41,6 +41,12 @@ const StoreHomepage = () => {
       >
         Store Name
       </header>
+      <div className="">
+        <Link to="/storelogin">
+        <h6 className="text-2xl font-semibold text-green-600 text-right ">Login</h6>
+        </Link>
+      
+      </div>
 
       <div className="flex justify-center w-full py-8 bg-white">
         <input

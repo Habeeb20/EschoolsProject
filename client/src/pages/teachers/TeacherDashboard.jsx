@@ -130,121 +130,115 @@ const TeacherDashboard = () => {
 
   return (
     <div className="flex flex-col items-center p-5 bg-gray-100 min-h-screen overflow-y-auto">
-    <div className="flex flex-col items-center bg-gray-100 p-6 min-h-screen">
-    {/* Header Section */}
-    <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-      Welcome
-    </h1>
-    <p className="text-lg text-gray-700 text-center">
-      Username: <span className="font-semibold">{user.username}</span>
+  <div className="flex flex-col items-center bg-gray-50 p-8 min-h-screen">
+  {/* Header Section */}
+  <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+    Welcome, {user.fname} {user.lname}
+  </h1>
+  
+  {/* User Information Section */}
+  <div className="bg-white shadow-lg rounded-lg p-6 mb-6 w-full max-w-xl">
+    <p className="text-lg text-gray-700 mb-2">
+      <span className="font-semibold">Username:</span> {user.username}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      Full Name : <span className="font-semibold">{user.fname} {user.lname}</span>
+    <p className="text-lg text-gray-700 mb-2">
+      <span className="font-semibold">Full Name:</span> {user.fname} {user.lname}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      Email: <span className="font-semibold">{user.email}</span>
+    <p className="text-lg text-gray-700 mb-2">
+      <span className="font-semibold">Email:</span> {user.email}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      phone Number: <span className="font-semibold">{user.phone}</span>
+    <p className="text-lg text-gray-700 mb-2">
+      <span className="font-semibold">Phone Number:</span> {user.phone}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      Address: <span className="font-semibold">{user.location}</span>
+    <p className="text-lg text-gray-700 mb-2">
+      <span className="font-semibold">Address:</span> {user.location}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      qualification: <span className="font-semibold">{user.qualification}</span>
+    <p className="text-lg text-gray-700 mb-2">
+      <span className="font-semibold">Qualification:</span> {user.qualification}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      LGA: <span className="font-semibold">{user.LGA}</span>
+    <p className="text-lg text-gray-700 mb-2">
+      <span className="font-semibold">LGA:</span> {user.LGA}
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      State: <span className="font-semibold">{user.state}</span>
-    </p>
-    <p className="text-lg text-gray-700 text-center">
-      Address: <span className="font-semibold">{user.location}</span>
-    </p>
- 
- 
-    <p className="text-lg text-blue-700 text-center">
-   school graduated from: <span className="font-semibold text-black">{user.school}</span>
-    </p>
-    <p className="text-lg text-blue-700 text-center">
-      grade: <span className="font-semibold text-black">{user.grade}</span>
-    </p>
-    <p className="text-lg text-blue-700 text-center">
-      specialization: <span className="font-semibold text-black">{user.specialization}</span>
+    <p className="text-lg text-gray-700 mb-2">
+      <span className="font-semibold">State:</span> {user.state}
     </p>
 
-    <p className="text-lg text-blue-700 text-center">
-      work experience: <span className="font-semibold text-black">{user.YOE}</span>
+    {/* Educational Details */}
+    <p className="text-lg text-blue-700 mb-2">
+      <span className="font-semibold">School Graduated From:</span> {user.school}
+    </p>
+    <p className="text-lg text-blue-700 mb-2">
+      <span className="font-semibold">Grade:</span> {user.grade}
+    </p>
+    <p className="text-lg text-blue-700 mb-2">
+      <span className="font-semibold">Specialization:</span> {user.specialization}
     </p>
 
-    <p className="text-lg text-blue-700 text-center">
-      professional summary: <span className="font-semibold text-black">{user.PS}</span>
+    {/* Work Experience */}
+    <p className="text-lg text-blue-700 mb-2">
+      <span className="font-semibold">Work Experience:</span> {user.YOE} years
     </p>
 
-    <p className="text-lg text-blue-700 text-center">
-      Have a job: <span className="font-semibold text-black">{user.haveajob}</span>
+    {/* Professional Summary */}
+    <p className="text-lg text-blue-700 mb-2">
+      <span className="font-semibold">Professional Summary:</span> {user.PS}
     </p>
 
-    
-    <p className="text-lg text-blue-700 text-center">
-      what category of teaching is your current job: <span className="font-semibold text-black">{user.whatcategory}</span>
+    {/* Job Status */}
+    <p className="text-lg text-blue-700 mb-2">
+      <span className="font-semibold">Have a Job:</span> {user.haveajob}
     </p>
-
-    
-    <p className="text-lg text-blue-700 text-center">
-      looking for another job?: <span className="font-semibold text-black">{user.lookingforateachingjob}</span>
+    <p className="text-lg text-blue-700 mb-2">
+      <span className="font-semibold">Current Job Category:</span> {user.whatcategory}
     </p>
-
-    <p className="text-lg text-blue-700 text-center">
-      what other category do you fit in to?: <span className="font-semibold text-black">{user.fitinothercategory}</span>
+    <p className="text-lg text-blue-700 mb-2">
+      <span className="font-semibold">Looking for Another Job:</span> {user.lookingforateachingjob}
     </p>
-    
- 
- 
-
-    {/* Images Section */}
-    <div className="flex flex-wrap justify-center gap-4 mt-6">
-     
-   
-      {user.picture1 && (
-        <img
-          src={user.picture1}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-      {user.CV && (
-        <img
-          src={user.CV}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-      {user.picture2 && (
-        <img
-          src={user.picture2}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-      {user.picture3 && (
-        <img
-          src={user.picture3}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-      {user.picture4 && (
-        <img
-          src={user.picture4}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-   
-    </div>
+    <p className="text-lg text-blue-700 mb-2">
+      <span className="font-semibold">Fit in Another Category:</span> {user.fitinothercategory}
+    </p>
   </div>
+
+  {/* Images Section */}
+  <div className="flex flex-wrap justify-center gap-6 mt-8 w-full max-w-xl">
+    {user.picture1 && (
+      <img
+        src={user.picture1}
+        alt="User Picture"
+        className="w-36 h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.CV && (
+      <img
+        src={user.CV}
+        alt="User CV"
+        className="w-36 h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture2 && (
+      <img
+        src={user.picture2}
+        alt="User Picture"
+        className="w-36 h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture3 && (
+      <img
+        src={user.picture3}
+        alt="User Picture"
+        className="w-36 h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+    {user.picture4 && (
+      <img
+        src={user.picture4}
+        alt="User Picture"
+        className="w-36 h-36 rounded-lg shadow-md object-cover"
+      />
+    )}
+  </div>
+</div>
+
     
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">

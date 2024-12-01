@@ -66,6 +66,12 @@ const ExamHomepage = () => {
           </button>
         ))}
       </nav>
+      <div className="">
+        <Link to="/examlogin">
+        <h6 className="text-2xl font-semibold text-green-600 text-right ">Login</h6>
+        </Link>
+      
+      </div>
 
 
 

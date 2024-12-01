@@ -140,7 +140,7 @@ const TrainingDetails = () => {
 
   if (loading || !school) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center ">
         <div className="animate-spin rounded-full h-32 w-32 border-b-4 border-green-600"></div>
         <p className="text-lg font-semibold text-gray-700 mt-4">Loading...</p>
       </div>
@@ -203,7 +203,7 @@ const TrainingDetails = () => {
         </div>
 
         {/* Grid Picture */}
-        <div className="p-2 min-h-screen mb-negative">
+        <div className="p-2  mb-negative">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-2 bg-white shadow-md rounded-lg">
               <img

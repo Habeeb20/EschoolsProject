@@ -18,7 +18,10 @@ import tutorialRoute from "./routes/tutorial.js"
 import storeRoute from "./routes/storeRoute.js"
 import { v4 as uuidv4 } from 'uuid';
 import Visitor from "./models/visitors.js";
-import jobrouter from "./routes/job/ejobsRoute.js";
+
+import authJobrouter from "./routes/job/authejobsRoute.js";
+import postjobroute from "./routes/job/employerRoute.js";
+import applyjobroute from "./routes/job/JobseekerRoute.js";
 dotenv.config();
 
 
@@ -110,6 +113,10 @@ const PORT =9000
 
 app.use("/schools", router)
 
+app.use("/job", authJobrouter)
+app.use("/job", postjobroute)
+app.use("/job", applyjobroute)
+
 
 //request & report
 app.use("/report", reportRouter)
@@ -141,7 +148,7 @@ app.use("/tutorial", tutorialRoute)
 
 app.use("/store", storeRoute)
 
-app.use("/job", jobrouter)
+
 
  // Start server
  app.listen(PORT, () => {

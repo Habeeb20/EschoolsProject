@@ -107,79 +107,77 @@ const TrainingDashboard = () => {
     
   return (
     <div className="flex flex-col items-center p-5 bg-gray-100 min-h-screen overflow-y-auto">
-    <div className="flex flex-col items-center bg-gray-100 p-6 min-h-screen">
-    {/* Header Section */}
-    <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-      Welcome
-    </h1>
-    <p className="text-lg text-gray-700 text-center">
-      Username: <span className="font-semibold">{user.username}</span>
-    </p>
-    <p className="text-lg text-gray-700 text-center">
-      Training Name : <span className="font-semibold">{user.trainingName}</span>
-    </p>
-    <p className="text-lg text-gray-700 text-center">
-      Email: <span className="font-semibold">{user.email}</span>
-    </p>
-    <p className="text-lg text-gray-700 text-center">
-      Address: <span className="font-semibold">{user.location}</span>
-    </p>
- 
-    <p className="text-lg text-gray-700 text-center">
-      features: <span className="font-semibold">{user.features}</span>
-    </p>
-    <p className="text-lg text-gray-700 text-center">
-      State: <span className="font-semibold">{user.state}</span>
-    </p>
-    <p className="text-lg text-gray-700 text-center">
-      LGA: <span className="font-semibold">{user.LGA}</span>
-    </p>
- 
- 
-    <p className="text-lg text-blue-700 text-center">
-    motto: <span className="font-semibold text-black">{user.motto}</span>
-    </p>
-    <p className="text-lg text-blue-700 text-center">
-      category: <span className="font-semibold text-black">{user.category}</span>
-    </p>
- 
- 
+  <div className="flex flex-col items-center bg-gray-50 p-6 min-h-screen">
+  {/* Header Section */}
+  <h1 className="text-3xl font-semibold text-blue-800 mb-8 text-center">
+    Welcome to Your Profile
+  </h1>
 
-    {/* Images Section */}
-    <div className="flex flex-wrap justify-center gap-4 mt-6">
-     
-   
-      {user.picture1 && (
-        <img
-          src={user.picture1}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-      {user.picture2 && (
-        <img
-          src={user.picture2}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-      {user.picture3 && (
-        <img
-          src={user.picture3}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-      {user.picture4 && (
-        <img
-          src={user.picture4}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-   
-    </div>
+  {/* User Information */}
+  <div className="space-y-4 w-full max-w-3xl">
+    <p className="text-xl text-gray-800">
+      Username: <span className="font-semibold text-gray-900">{user.username}</span>
+    </p>
+    <p className="text-xl text-gray-800">
+      Training Name: <span className="font-semibold text-gray-900">{user.trainingName}</span>
+    </p>
+    <p className="text-xl text-gray-800">
+      Email: <span className="font-semibold text-gray-900">{user.email}</span>
+    </p>
+    <p className="text-xl text-gray-800">
+      Address: <span className="font-semibold text-gray-900">{user.location}</span>
+    </p>
+    <p className="text-xl text-gray-800">
+      Features: <span className="font-semibold text-gray-900">{user.features}</span>
+    </p>
+    <p className="text-xl text-gray-800">
+      State: <span className="font-semibold text-gray-900">{user.state}</span>
+    </p>
+    <p className="text-xl text-gray-800">
+      LGA: <span className="font-semibold text-gray-900">{user.LGA}</span>
+    </p>
+
+    <p className="text-xl text-blue-700">
+      Motto: <span className="font-semibold text-black">{user.motto}</span>
+    </p>
+    <p className="text-xl text-blue-700">
+      Category: <span className="font-semibold text-black">{user.category}</span>
+    </p>
   </div>
+
+  {/* Images Section */}
+  <div className="flex flex-wrap justify-center gap-6 mt-8">
+    {user.picture1 && (
+      <img
+        src={user.picture1}
+        alt="Picture 1"
+        className="w-40 h-40 rounded-lg shadow-lg object-cover transition-transform transform hover:scale-105"
+      />
+    )}
+    {user.picture2 && (
+      <img
+        src={user.picture2}
+        alt="Picture 2"
+        className="w-40 h-40 rounded-lg shadow-lg object-cover transition-transform transform hover:scale-105"
+      />
+    )}
+    {user.picture3 && (
+      <img
+        src={user.picture3}
+        alt="Picture 3"
+        className="w-40 h-40 rounded-lg shadow-lg object-cover transition-transform transform hover:scale-105"
+      />
+    )}
+    {user.picture4 && (
+      <img
+        src={user.picture4}
+        alt="Picture 4"
+        className="w-40 h-40 rounded-lg shadow-lg object-cover transition-transform transform hover:scale-105"
+      />
+    )}
+  </div>
+</div>
+
     
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">

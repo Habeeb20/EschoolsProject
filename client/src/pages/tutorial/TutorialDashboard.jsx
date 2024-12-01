@@ -113,82 +113,80 @@ const TutorialDashboard = () => {
   return (
     <div>
         <div className="flex flex-col items-center p-5 bg-gray-100 min-h-screen overflow-y-auto">
-    <div className="flex flex-col items-center bg-gray-100 p-6 min-h-screen">
-    {/* Header Section */}
-    <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-      Welcome
-    </h1>
-    <p className="text-lg text-gray-700 text-center">
-      Username: <span className="font-semibold">{user.username}</span>
+        <div className="flex flex-col items-center bg-gray-50 p-8 min-h-screen">
+  {/* Header Section */}
+  <h1 className="text-3xl font-semibold text-blue-800 mb-8 text-center">
+    Welcome to the Tutorial Dashboard
+  </h1>
+
+  {/* User Information */}
+  <div className="space-y-4 w-full max-w-3xl">
+    <p className="text-xl text-gray-800">
+      Username: <span className="font-semibold text-gray-900">{user.username}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      Tutorial Name : <span className="font-semibold">{user.tutorialName}</span>
+    <p className="text-xl text-gray-800">
+      Tutorial Name: <span className="font-semibold text-gray-900">{user.tutorialName}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      Email: <span className="font-semibold">{user.email}</span>
+    <p className="text-xl text-gray-800">
+      Email: <span className="font-semibold text-gray-900">{user.email}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      Address: <span className="font-semibold">{user.location}</span>
+    <p className="text-xl text-gray-800">
+      Address: <span className="font-semibold text-gray-900">{user.location}</span>
     </p>
- 
-    <p className="text-lg text-gray-700 text-center">
-      price of Form: <span className="font-semibold">{user.formPrice}</span>
+    <p className="text-xl text-gray-800">
+      Price of Form: <span className="font-semibold text-gray-900">{user.formPrice}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      State: <span className="font-semibold">{user.state}</span>
+    <p className="text-xl text-gray-800">
+      State: <span className="font-semibold text-gray-900">{user.state}</span>
     </p>
-    <p className="text-lg text-gray-700 text-center">
-      LGA: <span className="font-semibold">{user.LGA}</span>
-    </p>
- 
- 
-    <p className="text-lg text-blue-700 text-center">
-    we prepare students for the following exams:
-     <span className="font-semibold text-black">{user.exam1}</span>
-     <span className="font-semibold text-black">{user.exam2}</span>
-     <span className="font-semibold text-black">{user.exam3}</span>
-     <span className="font-semibold text-black">{user.exam4}</span>
-     <span className="font-semibold text-black">{user.exam5}</span>
-     <span className="font-semibold text-black">{user.otherclasses}</span>
+    <p className="text-xl text-gray-800">
+      LGA: <span className="font-semibold text-gray-900">{user.LGA}</span>
     </p>
 
- 
-
-    {/* Images Section */}
-    <div className="flex flex-wrap justify-center gap-4 mt-6">
-     
-   
-      {user.picture1 && (
-        <img
-          src={user.picture1}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-      {user.picture2 && (
-        <img
-          src={user.picture2}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-      {user.picture3 && (
-        <img
-          src={user.picture3}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-      {user.picture4 && (
-        <img
-          src={user.picture4}
-          alt="School"
-          className="w-36 h-36 rounded-lg shadow-md object-cover"
-        />
-      )}
-   
-    </div>
+    <p className="text-xl text-blue-700">
+      We prepare students for the following exams:
+      <span className="font-semibold text-black">{user.exam1}</span>
+      <span className="font-semibold text-black">{user.exam2}</span>
+      <span className="font-semibold text-black">{user.exam3}</span>
+      <span className="font-semibold text-black">{user.exam4}</span>
+      <span className="font-semibold text-black">{user.exam5}</span>
+      <span className="font-semibold text-black">{user.otherclasses}</span>
+    </p>
   </div>
+
+  {/* Images Section */}
+  <div className="flex flex-wrap justify-center gap-6 mt-8">
+    {user.picture1 && (
+      <img
+        src={user.picture1}
+        alt="Picture 1"
+        className="w-40 h-40 rounded-lg shadow-lg object-cover transition-transform transform hover:scale-105"
+      />
+    )}
+    {user.picture2 && (
+      <img
+        src={user.picture2}
+        alt="Picture 2"
+        className="w-40 h-40 rounded-lg shadow-lg object-cover transition-transform transform hover:scale-105"
+      />
+    )}
+    {user.picture3 && (
+      <img
+        src={user.picture3}
+        alt="Picture 3"
+        className="w-40 h-40 rounded-lg shadow-lg object-cover transition-transform transform hover:scale-105"
+      />
+    )}
+    {user.picture4 && (
+      <img
+        src={user.picture4}
+        alt="Picture 4"
+        className="w-40 h-40 rounded-lg shadow-lg object-cover transition-transform transform hover:scale-105"
+      />
+    )}
+  </div>
+</div>
+
     
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">

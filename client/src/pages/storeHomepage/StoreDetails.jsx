@@ -124,7 +124,7 @@ const StoreDetails = () => {
 
   if (error) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <div className="flex flex-col items-center justify-center  bg-gray-100">
         <p className="text-red-500 font-semibold text-lg">{error}</p>
         <button
           onClick={() => window.location.reload()}
@@ -193,7 +193,7 @@ const StoreDetails = () => {
      
        
         {/* Grid Picture */}
-        <div className="p-2 min-h-screen mb-negative">
+        <div className="p-2  mb-negative">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-2 bg-white shadow-md rounded-lg">
               <img

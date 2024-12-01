@@ -58,6 +58,12 @@ const TutorialHomePage = () => {
           Search
         </button>
       </div>
+      <div className="">
+        <Link to="/tutoriallogin">
+        <h6 className="text-2xl font-semibold text-green-600 text-right ">Login</h6>
+        </Link>
+      
+      </div>
 
       {/* Cards Section */}
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-8 px-4">

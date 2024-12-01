@@ -67,6 +67,12 @@ const TrainingHomePage = () => {
        </button>
      ))}
    </nav>
+   <div className="">
+        <Link to="/traininglogin">
+        <h6 className="text-2xl font-semibold text-green-600 text-right ">Login</h6>
+        </Link>
+      
+      </div>
 
 
 

@@ -25,8 +25,8 @@ const TeacherHomepage = () => {
         const matchesCategory =
           activeCategory === "All" || card.whatcategory === activeCategory;
         const matchesSearchTerm = card.fname
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
+          ?.toLowerCase()
+          ?.includes(searchTerm.toLowerCase());
         return matchesCategory && matchesSearchTerm;
       });
     
@@ -66,6 +66,12 @@ const TeacherHomepage = () => {
        </button>
      ))}
    </nav>
+   <div className="">
+        <Link to="/teacherlogin">
+        <h6 className="text-2xl font-semibold text-green-600 text-right ">Login</h6>
+        </Link>
+      
+      </div>
 
 
 

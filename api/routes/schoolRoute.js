@@ -61,8 +61,7 @@ router.post(
     const { username, password } = req.body;
 
     if (!username || !password) {
-      res.status(400);
-      throw new Error("Username and password are required.");
+      res.status(400).json({message:"Username and password are required."});
     }
 
     const user = await School.findOne({ username });
@@ -72,8 +71,7 @@ router.post(
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      res.status(404);
-      throw new Error("Invalid  password.");
+      res.status(404).json({message:"Invalid  password."});
     }
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
@@ -493,22 +491,22 @@ router.get('/category/counts', async(req, res) => {
   }
 })
 
-router.get('/location/counts', async(req, res) => {
-  try {
-    const categoryCounts = {
-      primary: await School.countDocuments({ category: 'primary' }),
-      secondary: await School.countDocuments({ category: 'secondary' }),
-      college: await School.countDocuments({ category: 'college' }),
-      polytechnic: await School.countDocuments({ category: 'polytechnic' }),
-      university: await School.countDocuments({ category: 'university' })
-    };
+// router.get('/location/counts', async(req, res) => {
+//   try {
+//     const categoryCounts = {
+//       primary: await School.countDocuments({ category: 'primary' }),
+//       secondary: await School.countDocuments({ category: 'secondary' }),
+//       college: await School.countDocuments({ category: 'college' }),
+//       polytechnic: await School.countDocuments({ category: 'polytechnic' }),
+//       university: await School.countDocuments({ category: 'university' })
+//     };
 
-    res.json(categoryCounts);
-  } catch (error) {
-    console.error('Error fetching category counts:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-})
+//     res.json(categoryCounts);
+//   } catch (error) {
+//     console.error('Error fetching category counts:', error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// })
 
 
 router.get('/location/counts', async (req, res) => {

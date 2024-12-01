@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import {toast} from 'react-hot-toast'
+import {Link} from "react-router-dom"
 
 
 const Dashboard = () => {
@@ -185,12 +186,157 @@ const Dashboard = () => {
    
     return (
         <div className="flex flex-col items-center p-5 bg-gray-100 min-h-screen overflow-y-auto">
-      <div className="flex flex-col items-center bg-gray-100 p-6 min-h-screen">
+     <div className="bg-gray-100 min-h-screen p-6">
       {/* Header Section */}
-      <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-        Welcome
-      </h1>
-      <p className="text-lg text-gray-700 text-center">
+      <header className="bg-white shadow-md rounded-lg p-6 mb-6">
+        <div className="flex justify-between items-center">
+          <h1 className="text-3xl font-bold text-gray-800">
+            Welcome, {user.username}!
+          </h1>
+          <Link to="https://dbd.eschoolconnect.ng/">
+            <button className="bg-green-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-green-700">
+              School Management System
+            </button>
+          </Link>
+        </div>
+        <p className="text-gray-600 mt-2">
+          Dashboard for <span className="font-semibold">{user.schoolName}</span>
+        </p>
+      </header>
+
+      {/* General Information Section */}
+      <section className="bg-white shadow-md rounded-lg p-6 mb-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-4">
+          General Information
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { label: "Email", value: user.email },
+            { label: "Address", value: user.location },
+            { label: "LGA", value: user.LGA },
+            { label: "State", value: user.state },
+            { label: "Discount", value: user.discount },
+            { label: "Who Deserves Discount", value: user.discounttext },
+            { label: "Faculty", value: user.faculty },
+          ].map((info, idx) => (
+            <div
+              key={idx}
+              className="bg-gray-50 border border-gray-200 p-4 rounded-md shadow-sm"
+            >
+              <p className="text-sm text-gray-500">{info.label}</p>
+              <p className="text-lg font-semibold text-gray-800">
+                {info.value || "N/A"}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* School Details Section */}
+      <section className="bg-white shadow-md rounded-lg p-6 mb-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-4">
+          School Details
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { label: "Terms and Conditions", value: user.TC },
+            { label: "School News", value: user.schoolNews },
+            { label: "History", value: user.history },
+            { label: "Speech", value: user.vcspeech },
+            { label: "Aims and Objectives", value: user.AO },
+            { label: "Ownership", value: user.ownership },
+          ].map((detail, idx) => (
+            <div
+              key={idx}
+              className="bg-gray-50 border border-gray-200 p-4 rounded-md shadow-sm"
+            >
+              <p className="text-sm text-gray-500">{detail.label}</p>
+              <p className="text-lg font-semibold text-gray-800">
+                {detail.value || "N/A"}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Fees Section */}
+      <section className="bg-white shadow-md rounded-lg p-6 mb-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-4">School Fees</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+            <div
+              key={num}
+              className="bg-gray-50 border border-gray-200 p-4 rounded-md shadow-sm"
+            >
+              <p className="text-sm text-gray-500">
+                Class for School Fees {num}
+              </p>
+              <p className="text-lg font-semibold text-gray-800">
+                {user[`class${num}`] || "N/A"}
+              </p>
+              <p className="text-sm text-gray-500">Amount</p>
+              <p className="text-lg font-semibold text-gray-800">
+                {user[`schoolfees${num}`] || "N/A"}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Job Vacancy Section */}
+      <section className="bg-white shadow-md rounded-lg p-6 mb-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-4">Job Vacancies</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[1, 2, 3, 4, 5, 6].map((num) => (
+            <div
+              key={num}
+              className="bg-gray-50 border border-gray-200 p-4 rounded-md shadow-sm"
+            >
+              <p className="text-sm text-gray-500">Position {num}</p>
+              <p className="text-lg font-semibold text-gray-800">
+                {user[`position${num}`] || "N/A"}
+              </p>
+              <p className="text-sm text-gray-500">Salary</p>
+              <p className="text-lg font-semibold text-gray-800">
+                {user[`salary${num}`] || "N/A"}
+              </p>
+              <p className="text-sm text-gray-500">Qualification</p>
+              <p className="text-lg font-semibold text-gray-800">
+                {user[`qualification${num}`] || "N/A"}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Images Section */}
+      <section className="bg-white shadow-md rounded-lg p-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-4">Images</h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          {[
+            user.coverPicture,
+            user.schoolPicture,
+            user.picture,
+            user.picture1,
+            user.picture2,
+            user.picture3,
+            user.picture4,
+            user.vcpicture,
+          ]
+            .filter((pic) => pic)
+            .map((pic, idx) => (
+              <img
+                key={idx}
+                src={pic}
+                alt={`School image ${idx + 1}`}
+                className="w-36 h-36 rounded-lg shadow-md object-cover"
+              />
+            ))}
+        </div>
+      </section>
+    </div>
+   
+      {/* <p className="text-lg text-gray-700 text-center">
         Username: <span className="font-semibold">{user.username}</span>
       </p>
       <p className="text-lg text-gray-700 text-center">
@@ -352,10 +498,10 @@ const Dashboard = () => {
       </p>
       <p className="text-lg text-blue-700 text-center">
         qualification needed for position6: <span className="font-semibold text-black">{user.qualification6}</span>
-      </p>
+      </p> */}
 
-      {/* Images Section */}
-      <div className="flex flex-wrap justify-center gap-4 mt-6">
+  
+      {/* <div className="flex flex-wrap justify-center gap-4 mt-6">
         {user.coverPicture && (
           <img
             src={user.coverPicture}
@@ -412,9 +558,10 @@ const Dashboard = () => {
             className="w-36 h-36 rounded-lg shadow-md object-cover"
           />
         )}
-      </div>
-    </div>
-      
+        
+      </div> */}
+
+    
         {showPopup && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-xl max-h-[90vh] overflow-y-auto">
@@ -1359,8 +1506,8 @@ const Dashboard = () => {
           <div className="text-green-500 mt-5">{successMessage}</div>
         )}
       </div>
-    )
-   
+      
+      )
     
 }
 

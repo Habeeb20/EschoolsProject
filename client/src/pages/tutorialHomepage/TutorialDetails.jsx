@@ -157,7 +157,7 @@ const TutorialDetails = () => {
 
     
   return (
-    <div className="p-4 md:p-8 bg-gray-100 min-h-screen">
+    <div className="p-4 md:p-8 bg-gray-100 ">
     <div className="bg-white p-6 rounded-lg shadow-md space-y-6">
       {/* School Cover Image */}
       <img
@@ -221,7 +221,7 @@ const TutorialDetails = () => {
       
 
         {/* Grid Picture */}
-        <div className="p-2 min-h-screen mb-negative">
+        <div className="p-2  mb-negative">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-2 bg-white shadow-md rounded-lg">
               <img

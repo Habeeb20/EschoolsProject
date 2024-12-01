@@ -45,13 +45,13 @@ import TutorialRegister from "./pages/tutorial/TutorialRegister"
 import TutorialDashboard from './pages/tutorial/TutorialDashboard'
 import TutorialDetails from './pages/tutorialHomepage/TutorialDetails'
 import Comparison from './pages/Admission/Comparison'
-import JobList from './pages/job/JobList'
-import JobLogin from './pages/job/JobLogin'
-import JobRegister from './pages/job/JobRegister'
-import PostJob from './pages/job/PostJob'
-import Application from './pages/job/Application'
-import JobDashboard from './pages/job/JobDashboard'
+
 import Admission from './pages/Admission/Admission'
+import LoginJob from './pages/Ejobs/LoginJob'
+import RegisterJob from './pages/Ejobs/RegisterJob'
+import EmployerDashboard from './pages/Ejobs/EmployerDashboard'
+import JobSeekerDashboard from './pages/Ejobs/JobSeeker'
+import EjobsLandingPage from './pages/Ejobs/EjobsLandingPage'
 function App() {
 
 
@@ -126,12 +126,12 @@ function App() {
         <Route path="/admission" element={<Admission />} />
         <Route path="/comparison" element={<Comparison />} />
 
-        <Route path="/joblist" element={<JobList />} />
-        <Route path="/joblogin" element={<JobLogin />} />
-        <Route path="/jobregister" element={<JobRegister />} />
-        <Route path="/post-job" element={<PostJob />} />
-        <Route path="/applications" element={<Application />} />
-        <Route path="/jobdashboard" element={<JobDashboard />} />
+        <Route path="/joblogin" element={<LoginJob />} />
+        <Route path="/jobregister" element={<RegisterJob />} />
+        <Route path="/employerdashboard" element={<EmployerDashboard />} />
+        <Route path="/jobseekerdashboard" element={<JobSeekerDashboard />} />
+
+        <Route path="/joblandingpage" element={<EjobsLandingPage />} />
       </Routes>
       <Footer />
     
