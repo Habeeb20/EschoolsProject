@@ -55,6 +55,7 @@ import EjobsLandingPage from './pages/Ejobs/EjobsLandingPage'
 import Scholarship from './pages/Scholarship'
 import BookHomePage from './pages/BookHompeage/BookHomePage'
 import BookDetails from './pages/BookHompeage/BookDetails'
+import CategoryDisplay from './component/landingPage/CategoryDisplay'
 function App() {
 
 
@@ -69,6 +70,7 @@ function App() {
       <Route path="/schoolslogin" element={<Login />} />
       <Route path="/schooldetail/:id" element={<AschoolDetails />} />
       <Route path="/category/:category" element={<CategoryPage />} />
+      <Route path="/:category/:id"  element={<CategoryDisplay />} />
       <Route path="/state/:state" element={<LocationPage />} />
       <Route path="/data/:location" element={<DataInState />} />
    

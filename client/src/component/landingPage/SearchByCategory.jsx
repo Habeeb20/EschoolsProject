@@ -27,8 +27,8 @@ const SearchByCategory = () => {
     { name: "University", icon: <FaUniversity />, category: "university" },
     { name: "Teachers", icon: <FaUniversity />, category: "teachers" },
     { name: "Exams", icon: <FaGraduationCap />, category: "exams" },
-    { name: "Bookshops", icon: <FaBuilding />, category: "bookshops" },
-    { name: "Tutorials", icon: <FaSchool />, category: "tutorials" },
+    // { name: "Bookshops", icon: <FaBuilding />, category: "bookshops" },
+    // { name: "Tutorials", icon: <FaSchool />, category: "tutorials" },
   ];
 
   const handleCategoryClick = (category) => {

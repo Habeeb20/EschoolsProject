@@ -21,7 +21,7 @@ const AschoolDetails = () => {
 
     setLoading(true);
     axios
-      .get(`http://localhost:9000/schools/aschool/${id}`)
+      .get(`${import.meta.env.VITE_API}/schools/aschool/${id}`)
       .then((response) => {
         setSchool(response.data.school);
         setError(null);

@@ -268,28 +268,28 @@ const SchoolsDetails = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
               <div className="p-2 bg-white shadow-md rounded-lg">
                 <img
-                  src={school.picture1}
+                  src={school.picture1 ||   "https://via.placeholder.com/150"}
                   alt="Picture 1"
                   className="w-full h-auto rounded-md object-cover"
                 />
               </div>
               <div className="p-2 bg-white shadow-md rounded-lg">
                 <img
-                  src={school.picture2}
+                  src={school.picture2 ||   "https://via.placeholder.com/150"}
                   alt="Picture 2"
                   className="w-full h-auto rounded-md object-cover"
                 />
               </div>
               <div className="p-2 bg-white shadow-md rounded-lg">
                 <img
-                  src={school.picture3}
+                  src={school.picture3 ||   "https://via.placeholder.com/150"}
                   alt="Picture 3"
                   className="w-full h-auto rounded-md object-cover"
                 />
               </div>
               <div className="p-2 bg-white shadow-md rounded-lg">
                 <img
-                  src={school.schoolPicture}
+                  src={school.schoolPicture ||   "https://via.placeholder.com/150"}
                   alt="Picture 3"
                   className="w-full h-auto rounded-md object-cover"
                 />

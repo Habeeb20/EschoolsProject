@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+ import React,{useState, useEffect} from 'react'
 import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -207,28 +207,28 @@ const TrainingDetails = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-2 bg-white shadow-md rounded-lg">
               <img
-                src={school.picture1}
+                src={school.picture1 }
                 alt="Picture 1"
                 className="w-full h-auto rounded-md object-cover"
               />
             </div>
             <div className="p-2 bg-white shadow-md rounded-lg">
               <img
-                src={school.picture2}
+                src={school.picture2 }
                 alt="Picture 2"
                 className="w-full h-auto rounded-md object-cover"
               />
             </div>
             <div className="p-2 bg-white shadow-md rounded-lg">
               <img
-                src={school.picture3}
+                src={school.picture3 }
                 alt="Picture 3"
                 className="w-full h-auto rounded-md object-cover"
               />
             </div>
             <div className="p-2 bg-white shadow-md rounded-lg">
               <img
-                src={school.picture4}
+                src={school.picture4 }
                 alt="Picture 3"
                 className="w-full h-auto rounded-md object-cover"
               />
