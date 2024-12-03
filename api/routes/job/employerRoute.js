@@ -1,5 +1,5 @@
-
 import Job from '../../models/jobs/job.js';
+
 import Employer from '../../models/jobs/Employer.js';
 import { protectEmployer } from '../../middleware/authMiddleware.js';
 import express from 'express';

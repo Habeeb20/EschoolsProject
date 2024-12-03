@@ -156,5 +156,5 @@ app.use("/store", storeRoute)
   });
 
 app.get("/", (req, res) => {
-    res.json("the api is perfectly working right now...")
+    res.json("the api for eschools is perfectly working right now.......")
   })
