@@ -189,24 +189,7 @@ const TrainingDashboard = () => {
                 key !== "picture1" &&
                 key !== "picture2" &&
                 key !== "picture3" &&
-                key !== "picture4"  ? (
-                  <div key={key} className="flex flex-col">
-                    <label
-                      className="block text-sm font-medium text-gray-600 mb-1"
-                      htmlFor={key}
-                    >
-                      {key.replace(/([A-Z])/g, " $1").toUpperCase()}
-                    </label>
-                    <input
-                      type={key.includes("Date") ? "date" : "text"}
-                      id={key}
-                      name={key}
-                      value={userData[key]}
-                      onChange={handleChange}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    />
-                  </div>
-                ) : null
+                key !== "picture4"  
               )}
     
               {/* New input fields */}
